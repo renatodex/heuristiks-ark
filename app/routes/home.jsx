@@ -22,43 +22,75 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 retro-glow text-[#06b6d4]">
-            BEM-VINDO À ARCA
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Heurísticas são princípios poderosos criados em programação e áreas técnicas,
-            mas que são úteis para <span className="text-[#8b5cf6] font-bold">todas as pessoas e profissões</span>.
+        <div className="text-center py-16 md:py-24 max-w-5xl mx-auto">
+          <div className="mb-6">
+            <span className="inline-block px-4 py-1.5 bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 rounded-full text-sm font-semibold text-[#8b5cf6] tracking-wide uppercase">
+              Catálogo de Conhecimento
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
+            <span className="gradient-text retro-glow">Arca das</span>
+            <br />
+            <span className="gradient-text retro-glow">Heurísticas</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto font-light">
+            Princípios poderosos de programação e áreas técnicas que são{" "}
+            <span className="text-[#8b5cf6] font-semibold">úteis para todas as pessoas</span> e profissões.
+            Catalogados de forma elegante e acessível.
           </p>
+
+          {/* Stats */}
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto">
+            <div className="retro-card text-center py-6">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{heuristics.length}</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Heurísticas</div>
+            </div>
+            <div className="retro-card text-center py-6">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{categories.length}</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Categorias</div>
+            </div>
+            <div className="retro-card text-center py-6">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">100%</div>
+              <div className="text-xs text-gray-400 uppercase tracking-wider font-medium">Gratuito</div>
+            </div>
+          </div>
         </div>
 
         {/* Category Filter */}
-        <div className="mb-12">
-          <h3 className="text-xl font-bold mb-4 text-[#fbbf24]">Filtrar por Categoria</h3>
+        <div className="mb-16">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold">
+              <span className="gradient-text">Explorar</span>
+            </h2>
+            <span className="text-sm text-gray-400 font-medium">
+              {filteredHeuristics.length} {filteredHeuristics.length === 1 ? 'resultado' : 'resultados'}
+            </span>
+          </div>
           <div className="flex flex-wrap gap-3">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`px-6 py-3 retro-border transition-all ${
+              className={`retro-button ${
                 selectedCategory === null
-                  ? 'bg-[#8b5cf6] text-white'
-                  : 'hover:bg-[#8b5cf6]/20'
+                  ? 'bg-[#8b5cf6] text-white border-[#8b5cf6]'
+                  : ''
               }`}
             >
-              Todas
+              🌟 Todas
             </button>
             {categories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-6 py-3 retro-border transition-all ${
+                className={`retro-button ${
                   selectedCategory === cat.id
-                    ? 'text-white'
-                    : 'hover:bg-[#8b5cf6]/20'
+                    ? 'text-white border-opacity-60'
+                    : ''
                 }`}
                 style={{
-                  backgroundColor: selectedCategory === cat.id ? cat.color : 'transparent'
+                  backgroundColor: selectedCategory === cat.id ? cat.color : 'transparent',
+                  borderColor: selectedCategory === cat.id ? cat.color : undefined
                 }}
               >
                 {cat.emoji} {cat.name}
@@ -68,7 +100,7 @@ export default function Home() {
         </div>
 
         {/* Heuristics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
           {filteredHeuristics.map(heuristic => {
             const category = categories.find(c => c.id === heuristic.category);
             return (
@@ -76,15 +108,20 @@ export default function Home() {
                 key={heuristic.id}
                 heuristic={heuristic}
                 categoryColor={category?.color || '#8b5cf6'}
+                categoryName={category?.name || 'Categoria'}
+                categoryEmoji={category?.emoji || '📝'}
               />
             );
           })}
         </div>
 
         {filteredHeuristics.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-2xl text-gray-500">
-              Nenhuma heurística encontrada nesta categoria.
+          <div className="text-center py-20 retro-card max-w-md mx-auto">
+            <p className="text-xl text-gray-400 mb-2">
+              Nenhuma heurística encontrada
+            </p>
+            <p className="text-sm text-gray-500">
+              Tente selecionar outra categoria
             </p>
           </div>
         )}
