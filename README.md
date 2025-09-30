@@ -1,87 +1,165 @@
-# Welcome to React Router!
+# 🏛️ Arca das Heurísticas
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Um catálogo elegante e visual de heurísticas de programação e áreas técnicas, mas que são úteis para **todas as pessoas e profissões**.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+![Design Retro Mega Drive](https://img.shields.io/badge/Design-Retro_Mega_Drive-8b5cf6?style=for-the-badge)
+![React Router](https://img.shields.io/badge/React_Router-7-06b6d4?style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?style=for-the-badge)
 
-## Features
+## 🎨 Design
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Design retro inspirado no **Mega Drive**, com visual escuro, elegante, linhas simples e cores vibrantes. Cada heurística tem uma página própria e link compartilhável.
 
-## Getting Started
+## ✨ Funcionalidades
 
-### Installation
+- 📚 **28+ Heurísticas catalogadas** com informações completas
+- 🎯 **Categorias:** Complexidade, Gestão, Design de Código, Arquitetura, Trabalho em Equipe
+- 🔗 **Páginas individuais** para cada heurística com link compartilhável
+- 📱 **Compartilhamento social** (Twitter, Facebook, LinkedIn, WhatsApp, Instagram, TikTok)
+- 🎨 **Design responsivo** e elegante
+- 🔍 **Filtros por categoria**
+- 💡 **Explicação ELI5** (Explain Like I'm 5) para cada conceito
+- 🎓 **Explicação detalhada** para aprofundamento
+- 🔗 **Heurísticas relacionadas** interconectadas
+- 🎥 **Links para vídeos** no YouTube
 
-Install the dependencies:
+## 🚀 Tecnologias
+
+- **React Router 7** - Framework moderno para aplicações React
+- **Tailwind CSS 4** - Estilização com utility-first
+- **React Icons** - Ícones elegantes
+- **Vite** - Build tool ultra-rápido
+
+## 📦 Instalação
 
 ```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/heuristics-ark.git
+
+# Entre na pasta
+cd heuristics-ark
+
+# Instale as dependências
 npm install
 ```
 
-### Development
-
-Start the development server with HMR:
+## 🔥 Desenvolvimento
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+O site estará disponível em `http://localhost:5173`
 
-## Building for Production
-
-Create a production build:
+## 🏗️ Build
 
 ```bash
 npm run build
 ```
 
-## Deployment
+## 📖 Heurísticas Catalogadas
 
-### Docker Deployment
+### Complexidade
+- Cognitive Complexity
+- Cyclomatic Complexity
+- Code Churn
+- Change Amplification
 
-To build and run using Docker:
+### Gestão
+- Bike Shedding
+- Parkinson's Law
+- Brooks' Law
+- Pareto Principle
 
-```bash
-docker build -t my-app .
+### Design de Código
+- SOLID Principles (SRP, OCP, LSP, ISP, DIP)
+- Overengineering
+- Shotgun Surgery
+- Data Clumps
+- Primitive Obsession
+- Temporal Coupling
+- Principle of Least Astonishment
 
-# Run the container
-docker run -p 3000:3000 my-app
+### Arquitetura
+- Idempotência
+- Conway's Law
+- Ubiquitous Language
+
+### Trabalho em Equipe
+- Bus Factor
+- Knowledge Silos
+
+## 🎯 Estrutura do Projeto
+
+```
+app/
+├── components/          # Componentes reutilizáveis
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   └── HeuristicCard.jsx
+├── data/               # Dados das heurísticas
+│   └── heuristics.js
+├── routes/             # Páginas
+│   ├── home.jsx        # Página inicial
+│   ├── heuristic.jsx   # Página individual
+│   └── about.jsx       # Sobre o criador
+├── styles.css          # Estilos customizados
+└── root.tsx            # Layout principal
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## 📝 Adicionando Novas Heurísticas
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+Para adicionar uma nova heurística, edite o arquivo `app/data/heuristics.js`:
 
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
+```javascript
+{
+  id: 'nome-da-heuristica',
+  title: 'Nome da Heurística',
+  subtitle: 'Breve descrição',
+  category: 'complexity', // ou management, design, architecture, team
+  icon: 'FaBrain', // Nome do ícone do react-icons/fa
+  shortDescription: 'Descrição curta',
+  inventor: 'Nome do Inventor',
+  year: '2024',
+  history: 'História completa...',
+  purpose: 'Para que serve...',
+  eli5: 'Explicação simples...',
+  detailed: 'Explicação detalhada...',
+  relatedHeuristics: ['id-outra-heuristica'],
+  youtubeVideos: [
+    { title: 'Título do vídeo', url: 'https://youtube.com/...' }
+  ],
+}
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
 
-## Styling
+## 🎨 Cores do Tema
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- **Roxo Principal:** `#8b5cf6`
+- **Ciano:** `#06b6d4`
+- **Rosa:** `#ec4899`
+- **Amarelo:** `#fbbf24`
+- **Verde:** `#10b981`
+- **Fundo Escuro:** `#0a0a0f`
+- **Fundo Mais Escuro:** `#050508`
+
+## 👨‍💻 Criador
+
+Criado com 💜 por **[Renato Alves](https://r-labs.dev)** @ [r-labs.dev](https://r-labs.dev)
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Sugestões de novas heurísticas, melhorias no design ou correções são muito apreciadas.
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaHeuristica`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova heurística'`)
+4. Push para a branch (`git push origin feature/NovaHeuristica`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+MIT
 
 ---
 
-Built with ❤️ using React Router.
+**Arca das Heurísticas** - Conhecimento poderoso para todos 🏛️✨
