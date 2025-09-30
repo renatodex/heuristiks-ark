@@ -32,14 +32,14 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto">
             <div className="mb-6">
-              <span className="inline-block px-4 py-1.5 bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 rounded-full text-sm font-semibold text-[#8b5cf6] tracking-wide uppercase backdrop-blur-sm">
+              <span className="inline-block px-4 py-2 bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 rounded-full text-xs font-semibold text-[#8b5cf6] tracking-wide uppercase backdrop-blur-sm">
                 Catálogo de Conhecimento
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-              <span className="gradient-text retro-glow">Arca das</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight">
+              <span className="gradient-text retro-glow">ARCA DAS</span>
               <br />
-              <span className="gradient-text retro-glow">Heurísticas</span>
+              <span className="gradient-text retro-glow">HEURÍSTICAS</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto font-light">
               Princípios poderosos de programação e áreas técnicas que são{" "}
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl md:text-3xl font-bold mt-6">
-              <span className="gradient-text">Explorar</span>
+              <span className="gradient-text">EXPLORAR</span>
             </h2>
             <span className="text-sm text-gray-400 font-medium">
               {filteredHeuristics.length} {filteredHeuristics.length === 1 ? 'resultado' : 'resultados'}

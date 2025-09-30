@@ -131,7 +131,7 @@ export default function Heuristic({ params }) {
               <h2 className="text-3xl md:text-4xl font-bold text-white retro-glow">
                 Explicando como se você tivesse 5 anos
               </h2>
-              <p className="text-white/80 text-sm mt-1">A parte mais divertida! 🎉</p>
+              <p className="text-white/80 text-sm mt-1">Agora sim! 🎉</p>
             </div>
           </div>
           <p className="text-xl md:text-2xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
