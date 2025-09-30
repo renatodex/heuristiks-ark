@@ -277,7 +277,7 @@ export default function Heuristic({ params }) {
 
         {/* YouTube Videos */}
         {heuristic.youtubeVideos && heuristic.youtubeVideos.length > 0 && (
-          <div className="retro-card">
+          <div className="retro-card mb-6">
             <div className="flex items-center gap-3 mb-4">
               <Icons.FaYoutube className="text-2xl text-red-500" />
               <h2 className="text-2xl font-bold text-red-500">
@@ -295,6 +295,35 @@ export default function Heuristic({ params }) {
                 >
                   <Icons.FaYoutube className="inline text-red-500 mr-2" />
                   <span className="text-red-500">{video.title || 'Assistir no YouTube'} →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Sources and References */}
+        {heuristic.sources && heuristic.sources.length > 0 && (
+          <div className="retro-card mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <Icons.FaBookOpen className="text-2xl text-[#10b981]" />
+              <h2 className="text-2xl font-bold text-[#10b981]">
+                Fontes e Referências
+              </h2>
+            </div>
+            <p className="text-gray-400 mb-4 text-sm">
+              Quer se aprofundar? Confira essas fontes oficiais:
+            </p>
+            <div className="space-y-3">
+              {heuristic.sources.map((source, index) => (
+                <a
+                  key={index}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border-2 border-[#10b981]/50 hover:border-[#10b981] hover:bg-[#10b981]/10 transition-all"
+                >
+                  <Icons.FaExternalLinkAlt className="inline text-[#10b981] mr-2" />
+                  <span className="text-[#10b981]">{source.title} →</span>
                 </a>
               ))}
             </div>

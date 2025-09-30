@@ -24,6 +24,10 @@ export const heuristics = [
     youtubeVideos: [
       { title: 'Cognitive Complexity - A new way of measuring understandability', url: 'https://www.youtube.com/watch?v=el9OKGrqU6o' },
     ],
+    sources: [
+      { title: 'Paper original - Cognitive Complexity: A new way of measuring understandability', url: 'https://www.sonarsource.com/resources/cognitive-complexity/' },
+      { title: 'SonarSource - Documentação oficial', url: 'https://www.sonarsource.com/docs/CognitiveComplexity.pdf' },
+    ],
   },
   {
     id: 'cyclomatic-complexity',
@@ -40,6 +44,10 @@ export const heuristics = [
     detailed: 'A Complexidade Ciclomática conta o número de caminhos linearmente independentes através do código. É calculada analisando o grafo de controle de fluxo do programa. Um valor alto indica que o código tem muitos caminhos de execução, tornando-o difícil de testar e manter. A fórmula é: M = E - N + 2P, onde E = arestas, N = nós, P = componentes conectados. Valores acima de 10 são considerados complexos.',
     relatedHeuristics: ['cognitive-complexity'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Paper original - A Complexity Measure (Thomas McCabe, 1976)', url: 'https://www.literateprogramming.com/mccabe.pdf' },
+      { title: 'Wikipedia - Cyclomatic Complexity', url: 'https://en.wikipedia.org/wiki/Cyclomatic_complexity' },
+    ],
   },
   {
     id: 'bike-shedding',
@@ -56,6 +64,10 @@ export const heuristics = [
     detailed: 'O Bike Shedding (ou Lei da Trivialidade) é um fenômeno onde grupos gastam tempo desproporcional em questões triviais que todos entendem, enquanto decisões complexas e importantes são aprovadas rapidamente porque poucas pessoas se sentem qualificadas para opinar. Em projetos de software, isso se manifesta em longas discussões sobre indentação, nomes de variáveis ou cores de UI, enquanto decisões arquiteturais críticas passam sem debate adequado.',
     relatedHeuristics: ['parkinsons-law'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Law of Triviality (Bike-shedding)', url: 'https://en.wikipedia.org/wiki/Law_of_triviality' },
+      { title: 'Parkinson\'s Law - The book', url: 'https://en.wikipedia.org/wiki/Parkinson%27s_law' },
+    ],
   },
   {
     id: 'code-churn',
@@ -72,6 +84,10 @@ export const heuristics = [
     detailed: 'Code Churn mede a volatilidade do código através da quantidade de linhas adicionadas, modificadas e removidas em um período. Alto churn pode indicar: incerteza nos requisitos, problemas de design, código experimental, ou simplesmente trabalho ativo. Analisar churn junto com bugs ajuda a identificar áreas problemáticas do código.',
     relatedHeuristics: ['shotgun-surgery', 'change-amplification'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Microsoft Research - Code Churn and Bugs', url: 'https://www.microsoft.com/en-us/research/publication/predicting-bugs-from-history/' },
+      { title: 'Article - Understanding Code Churn', url: 'https://linearb.io/blog/what-is-code-churn' },
+    ],
   },
   {
     id: 'parkinsons-law',
@@ -88,6 +104,10 @@ export const heuristics = [
     detailed: 'A Lei de Parkinson afirma que o trabalho se expande para preencher o tempo disponível para sua conclusão. Isso acontece porque tendemos a usar todo o tempo dado, mesmo que possamos terminar mais rápido. Em desenvolvimento de software, isso se manifesta em estimativas infladas, features desnecessariamente complexas, e procrastinação. A solução é criar prazos mais apertados (mas realistas) e dividir trabalho em tarefas menores.',
     relatedHeuristics: ['bike-shedding'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Ensaio original - Parkinson\'s Law (The Economist, 1955)', url: 'https://www.economist.com/news/1955/11/19/parkinsons-law' },
+      { title: 'Wikipedia - Parkinson\'s Law', url: 'https://en.wikipedia.org/wiki/Parkinson%27s_law' },
+    ],
   },
   {
     id: 'brooks-law',
@@ -104,6 +124,10 @@ export const heuristics = [
     detailed: 'A Lei de Brooks explica por que adicionar desenvolvedores a um projeto atrasado geralmente piora a situação. Novos membros precisam ser treinados, aumentam a sobrecarga de comunicação (canais de comunicação crescem exponencialmente), e podem introduzir mais bugs enquanto aprendem. A comunicação entre N pessoas requer N(N-1)/2 canais. Em vez de adicionar pessoas, é melhor reduzir escopo ou repensar a arquitetura.',
     relatedHeuristics: ['bus-factor', 'conways-law'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Livro - The Mythical Man-Month (Fred Brooks)', url: 'https://en.wikipedia.org/wiki/The_Mythical_Man-Month' },
+      { title: 'Wikipedia - Brooks\' Law', url: 'https://en.wikipedia.org/wiki/Brooks%27s_law' },
+    ],
   },
   {
     id: 'idempotence',
@@ -120,6 +144,11 @@ export const heuristics = [
     detailed: 'Idempotência significa que executar uma operação uma ou múltiplas vezes produz o mesmo resultado. Em APIs REST, métodos GET, PUT e DELETE devem ser idempotentes. Por exemplo, deletar um recurso uma vez ou dez vezes deixa o sistema no mesmo estado (recurso deletado). Isso é crucial para sistemas que precisam retransmitir operações, pois garante que duplicatas não causem efeitos colaterais indesejados.',
     relatedHeuristics: [],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Idempotence', url: 'https://en.wikipedia.org/wiki/Idempotence' },
+      { title: 'MDN - Idempotent HTTP Methods', url: 'https://developer.mozilla.org/en-US/docs/Glossary/Idempotent' },
+      { title: 'RFC 7231 - HTTP/1.1 Semantics (Section on Idempotent Methods)', url: 'https://tools.ietf.org/html/rfc7231#section-4.2.2' },
+    ],
   },
   {
     id: 'pareto-principle',
@@ -136,6 +165,10 @@ export const heuristics = [
     detailed: 'O Princípio de Pareto afirma que, em muitos casos, aproximadamente 80% dos efeitos vêm de 20% das causas. Em software: 80% dos bugs estão em 20% do código, 80% do uso vem de 20% das features, 80% do tempo é gasto em 20% das tarefas. Use isso para priorizar esforços: identifique e foque nos 20% mais impactantes.',
     relatedHeuristics: [],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Pareto Principle', url: 'https://en.wikipedia.org/wiki/Pareto_principle' },
+      { title: 'Livro - The 80/20 Principle (Richard Koch)', url: 'https://www.goodreads.com/book/show/181206.The_80_20_Principle' },
+    ],
   },
   {
     id: 'overengineering',
@@ -152,6 +185,10 @@ export const heuristics = [
     detailed: 'Overengineering acontece quando criamos soluções mais complexas do que o problema requer. Exemplos: criar abstrações para código usado uma única vez, implementar padrões de design desnecessários, otimizar prematuramente, ou construir "flexibility" que nunca será usada. O custo é código mais difícil de entender e manter. A solução é começar simples e adicionar complexidade apenas quando necessário (YAGNI - You Aren\'t Gonna Need It).',
     relatedHeuristics: ['srp'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Overengineering', url: 'https://en.wikipedia.org/wiki/Overengineering' },
+      { title: 'Article - YAGNI Principle', url: 'https://martinfowler.com/bliki/Yagni.html' },
+    ],
   },
   {
     id: 'srp',
@@ -168,6 +205,10 @@ export const heuristics = [
     detailed: 'O Princípio da Responsabilidade Única afirma que uma classe deve ter apenas uma razão para mudar, ou seja, apenas uma responsabilidade. Isso não significa fazer apenas uma coisa, mas que todas as coisas que faz devem estar relacionadas a uma única responsabilidade. Exemplo ruim: uma classe User que valida, persiste e envia email. Exemplo bom: User, UserValidator, UserRepository, EmailService.',
     relatedHeuristics: ['ocp', 'lsp', 'isp', 'dip'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - SOLID Principles', url: 'https://en.wikipedia.org/wiki/SOLID' },
+      { title: 'Uncle Bob - The Single Responsibility Principle', url: 'https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html' },
+    ],
   },
   {
     id: 'ocp',
@@ -184,6 +225,10 @@ export const heuristics = [
     detailed: 'O Princípio Aberto/Fechado diz que entidades de software devem estar abertas para extensão mas fechadas para modificação. Isso significa que podemos adicionar novos comportamentos sem alterar código existente, reduzindo o risco de bugs. Isso é alcançado através de abstrações (interfaces, classes abstratas) e polimorfismo. Exemplo: em vez de um switch-case gigante, use uma interface e diferentes implementações.',
     relatedHeuristics: ['srp', 'lsp', 'isp', 'dip'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Open/Closed Principle', url: 'https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle' },
+      { title: 'Livro - Object-Oriented Software Construction (Bertrand Meyer)', url: 'https://www.goodreads.com/book/show/946123.Object_Oriented_Software_Construction' },
+    ],
   },
   {
     id: 'lsp',
@@ -200,6 +245,10 @@ export const heuristics = [
     detailed: 'O Princípio da Substituição de Liskov afirma que objetos de uma classe base devem ser substituíveis por objetos de suas subclasses sem quebrar o programa. Isso significa que subclasses devem respeitar o contrato da classe base: mesmas pré-condições (ou mais fracas), mesmas pós-condições (ou mais fortes), e mesmas invariantes. Exemplo de violação: uma classe Square que herda de Rectangle e quebra a expectativa de que largura e altura são independentes.',
     relatedHeuristics: ['srp', 'ocp', 'isp', 'dip'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Paper original - Data Abstraction and Hierarchy (Barbara Liskov, 1987)', url: 'https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf' },
+      { title: 'Wikipedia - Liskov Substitution Principle', url: 'https://en.wikipedia.org/wiki/Liskov_substitution_principle' },
+    ],
   },
   {
     id: 'isp',
@@ -216,6 +265,10 @@ export const heuristics = [
     detailed: 'O Princípio da Segregação de Interface afirma que nenhum cliente deve ser forçado a depender de métodos que não usa. Em vez de uma interface grande com muitos métodos, crie interfaces menores e específicas. Exemplo ruim: IWorker com métodos work() e eat(), forçando robôs a implementar eat(). Exemplo bom: IWorkable com work() e IFeedable com eat().',
     relatedHeuristics: ['srp', 'ocp', 'lsp', 'dip'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Interface Segregation Principle', url: 'https://en.wikipedia.org/wiki/Interface_segregation_principle' },
+      { title: 'Uncle Bob - The Interface Segregation Principle', url: 'https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html' },
+    ],
   },
   {
     id: 'dip',
@@ -232,6 +285,10 @@ export const heuristics = [
     detailed: 'O Princípio da Inversão de Dependência afirma que: 1) Módulos de alto nível não devem depender de módulos de baixo nível; ambos devem depender de abstrações. 2) Abstrações não devem depender de detalhes; detalhes devem depender de abstrações. Isso inverte a direção tradicional de dependência, onde módulos de alto nível dependiam diretamente de implementações concretas. Use interfaces ou classes abstratas para desacoplar.',
     relatedHeuristics: ['srp', 'ocp', 'lsp', 'isp'],
     youtubeVideos: [],
+    sources: [
+      { title: 'Wikipedia - Dependency Inversion Principle', url: 'https://en.wikipedia.org/wiki/Dependency_inversion_principle' },
+      { title: 'Uncle Bob - Dependency Inversion Principle', url: 'https://blog.cleancoder.com/uncle-bob/2016/01/04/ALittleArchitecture.html' },
+    ],
   },
   {
     id: 'conways-law',
