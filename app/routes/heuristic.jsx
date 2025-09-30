@@ -120,6 +120,25 @@ export default function Heuristic({ params }) {
           </div>
         </div>
 
+        {/* ELI5 - DESTAQUE */}
+        <div className="relative mb-12 p-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg shadow-[0_0_30px_rgba(236,72,153,0.6)] transform hover:scale-102 transition-all">
+          <div className="absolute top-4 right-4 text-6xl opacity-20">
+            🎨
+          </div>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="text-5xl">👶</div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white retro-glow">
+                Explicando como se você tivesse 5 anos
+              </h2>
+              <p className="text-white/80 text-sm mt-1">A parte mais divertida! 🎉</p>
+            </div>
+          </div>
+          <p className="text-xl md:text-2xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
+            {heuristic.eli5}
+          </p>
+        </div>
+
         {/* Share Section */}
         <div className="retro-card mb-12">
           <div className="flex items-center gap-4 flex-wrap">
@@ -208,19 +227,6 @@ export default function Heuristic({ params }) {
           </div>
           <p className="text-lg text-gray-300 leading-relaxed">
             {heuristic.purpose}
-          </p>
-        </div>
-
-        {/* ELI5 */}
-        <div className="retro-card mb-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Icons.FaChild className="text-2xl text-[#ec4899]" />
-            <h2 className="text-2xl font-bold text-[#ec4899]">
-              Explicando como se você tivesse 5 anos (ELI5)
-            </h2>
-          </div>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            {heuristic.eli5}
           </p>
         </div>
 
