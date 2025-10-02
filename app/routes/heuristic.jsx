@@ -120,183 +120,368 @@ export default function Heuristic({ params }) {
           </div>
         </div>
 
-        {/* ELI5 - DESTAQUE */}
-        <div className="relative mb-12 p-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg shadow-[0_0_30px_rgba(236,72,153,0.6)] transform hover:scale-102 transition-all">
-          <div className="absolute top-4 right-4 text-6xl opacity-20">
-            🎨
-          </div>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="text-5xl">👶</div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white retro-glow">
-                Explicando como se você tivesse 5 anos
-              </h2>
-              <p className="text-white/80 text-sm mt-1">Agora sim! 🎉</p>
-            </div>
-          </div>
-          <p className="text-xl md:text-2xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
-            {heuristic.eli5}
-          </p>
-        </div>
-
-        {/* RED FLAG - DESTAQUE */}
-        {heuristic.whyRedFlag && (
-          <div className="relative mb-12 p-8 bg-gradient-to-br from-red-900/40 to-orange-900/40 rounded-lg shadow-lg transform hover:scale-102 transition-all border border-red-600/30">
-            <div className="absolute top-4 right-4 text-4xl opacity-10">
-              ⚠️
-            </div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-3xl">🚩</div>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-red-300">
-                  Por que isso é uma Red Flag?
-                </h2>
-                <p className="text-red-200/70 text-sm mt-1">Atenção ao problema! ⚡</p>
+        {/* Desktop Panel Layout */}
+        <div className="hidden lg:grid lg:grid-cols-12 lg:gap-6 mb-12">
+          {/* Left Column - Main Content */}
+          <div className="lg:col-span-8 space-y-6">
+            {/* ELI5 - DESTAQUE */}
+            <div className="relative p-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg shadow-[0_0_30px_rgba(236,72,153,0.6)] transform hover:scale-102 transition-all">
+              <div className="absolute top-4 right-4 text-6xl opacity-20">
+                🎨
               </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-5xl">👶</div>
+                <div>
+                  <h2 className="text-3xl font-bold text-white retro-glow">
+                    Explicando como se você tivesse 5 anos
+                  </h2>
+                  <p className="text-white/80 text-sm mt-1">Agora sim! 🎉</p>
+                </div>
+              </div>
+              <p className="text-xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
+                {heuristic.eli5}
+              </p>
             </div>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-normal bg-black/10 p-6 rounded-lg border border-red-600/20">
-              {heuristic.whyRedFlag}
-            </p>
-          </div>
-        )}
 
-        {/* Share Section */}
-        <div className="retro-card mb-12">
-          <div className="flex items-center gap-4 flex-wrap">
-            <Icons.FaShareAlt className="text-2xl text-[#8b5cf6]" />
-            <span className="font-bold">Compartilhar:</span>
-            <div className="flex gap-2 flex-wrap">
-              <button
-                onClick={() => handleShare('twitter')}
-                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 transition-colors"
-              >
-                <Icons.FaTwitter className="inline mr-1" /> Twitter
-              </button>
-              <button
-                onClick={() => handleShare('facebook')}
-                className="px-4 py-2 bg-blue-700 hover:bg-blue-800 transition-colors"
-              >
-                <Icons.FaFacebook className="inline mr-1" /> Facebook
-              </button>
-              <button
-                onClick={() => handleShare('linkedin')}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition-colors"
-              >
-                <Icons.FaLinkedin className="inline mr-1" /> LinkedIn
-              </button>
-              <button
-                onClick={() => handleShare('whatsapp')}
-                className="px-4 py-2 bg-green-600 hover:bg-green-700 transition-colors"
-              >
-                <Icons.FaWhatsapp className="inline mr-1" /> WhatsApp
-              </button>
-              <button
-                onClick={() => handleShare('instagram')}
-                className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-colors"
-              >
-                <Icons.FaInstagram className="inline mr-1" /> Instagram
-              </button>
-              <button
-                onClick={() => handleShare('tiktok')}
-                className="px-4 py-2 bg-black hover:bg-gray-900 transition-colors"
-              >
-                <Icons.FaTiktok className="inline mr-1" /> TikTok
-              </button>
+            {/* RED FLAG - DESTAQUE */}
+            {heuristic.whyRedFlag && (
+              <div className="relative p-8 bg-gradient-to-br from-red-900/40 to-orange-900/40 rounded-lg shadow-lg transform hover:scale-102 transition-all border border-red-600/30">
+                <div className="absolute top-4 right-4 text-4xl opacity-10">
+                  ⚠️
+                </div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-3xl">🚩</div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-red-300">
+                      Por que isso é uma Red Flag?
+                    </h2>
+                    <p className="text-red-200/70 text-sm mt-1">Atenção ao problema! ⚡</p>
+                  </div>
+                </div>
+                <p className="text-lg text-gray-200 leading-relaxed font-normal bg-black/10 p-6 rounded-lg border border-red-600/20">
+                  {heuristic.whyRedFlag}
+                </p>
+              </div>
+            )}
+
+            {/* Purpose */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaBullseye className="text-2xl text-[#ec4899]" />
+                <h2 className="text-2xl font-bold text-[#ec4899]">Para que serve</h2>
+              </div>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                {heuristic.purpose}
+              </p>
+            </div>
+
+            {/* Detailed Explanation */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaGraduationCap className="text-2xl text-[#06b6d4]" />
+                <h2 className="text-2xl font-bold text-[#06b6d4]">Explicação Detalhada</h2>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                {heuristic.detailed}
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Sidebar */}
+          <div className="lg:col-span-4 space-y-6">
+            {/* História */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaHistory className="text-2xl text-[#fbbf24]" />
+                <h2 className="text-xl font-bold text-[#fbbf24]">História</h2>
+              </div>
+              <p className="text-gray-300 leading-relaxed text-sm">
+                {heuristic.history}
+              </p>
+            </div>
+
+            {/* Inventor */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaUser className="text-2xl text-[#10b981]" />
+                <h2 className="text-xl font-bold text-[#10b981]">Quem Inventou</h2>
+              </div>
+              <p className="text-gray-300">
+                <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
+              </p>
+              <p className="text-gray-500 mt-2">
+                Ano: {heuristic.year}
+              </p>
+            </div>
+
+            {/* Share Section */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaShareAlt className="text-2xl text-[#8b5cf6]" />
+                <h2 className="text-xl font-bold text-[#8b5cf6]">Compartilhar</h2>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => handleShare('twitter')}
+                  className="px-3 py-2 text-sm bg-blue-500 hover:bg-blue-600 transition-colors rounded"
+                >
+                  <Icons.FaTwitter className="inline mr-1" /> Twitter
+                </button>
+                <button
+                  onClick={() => handleShare('facebook')}
+                  className="px-3 py-2 text-sm bg-blue-700 hover:bg-blue-800 transition-colors rounded"
+                >
+                  <Icons.FaFacebook className="inline mr-1" /> Facebook
+                </button>
+                <button
+                  onClick={() => handleShare('linkedin')}
+                  className="px-3 py-2 text-sm bg-blue-600 hover:bg-blue-700 transition-colors rounded"
+                >
+                  <Icons.FaLinkedin className="inline mr-1" /> LinkedIn
+                </button>
+                <button
+                  onClick={() => handleShare('whatsapp')}
+                  className="px-3 py-2 text-sm bg-green-600 hover:bg-green-700 transition-colors rounded"
+                >
+                  <Icons.FaWhatsapp className="inline mr-1" /> WhatsApp
+                </button>
+                <button
+                  onClick={() => handleShare('instagram')}
+                  className="px-3 py-2 text-sm bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-colors rounded"
+                >
+                  <Icons.FaInstagram className="inline mr-1" /> Instagram
+                </button>
+                <button
+                  onClick={() => handleShare('tiktok')}
+                  className="px-3 py-2 text-sm bg-black hover:bg-gray-900 transition-colors rounded"
+                >
+                  <Icons.FaTiktok className="inline mr-1" /> TikTok
+                </button>
+              </div>
               <button
                 onClick={copyToClipboard}
-                className="px-4 py-2 retro-border hover:bg-[#8b5cf6]/20 transition-colors"
+                className="w-full mt-2 px-3 py-2 text-sm retro-border hover:bg-[#8b5cf6]/20 transition-colors rounded"
               >
                 <Icons.FaCopy className="inline mr-1" /> Copiar Link
               </button>
             </div>
+
+            {/* Related Heuristics */}
+            {relatedHeuristicsData.length > 0 && (
+              <div className="retro-card">
+                <div className="flex items-center gap-3 mb-4">
+                  <Icons.FaNetworkWired className="text-2xl text-[#8b5cf6]" />
+                  <h2 className="text-xl font-bold text-[#8b5cf6]">
+                    Relacionadas
+                  </h2>
+                </div>
+                <div className="space-y-3">
+                  {relatedHeuristicsData.map(related => {
+                    const relatedCat = categories.find(c => c.id === related.category);
+                    return (
+                      <Link
+                        key={related.id}
+                        to={`/heuristica/${related.id}`}
+                        className="block p-3 border-2 border-[#8b5cf6]/50 hover:border-[#8b5cf6] hover:bg-[#8b5cf6]/10 transition-all rounded"
+                      >
+                        <h3
+                          className="font-bold mb-1 text-sm"
+                          style={{ color: relatedCat?.color || '#8b5cf6' }}
+                        >
+                          {related.title}
+                        </h3>
+                        <p className="text-xs text-gray-400">
+                          {related.subtitle}
+                        </p>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-          {/* História */}
+        {/* Mobile Layout - Original */}
+        <div className="lg:hidden space-y-6">
+          {/* ELI5 - DESTAQUE */}
+          <div className="relative p-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg shadow-[0_0_30px_rgba(236,72,153,0.6)] transform hover:scale-102 transition-all">
+            <div className="absolute top-4 right-4 text-6xl opacity-20">
+              🎨
+            </div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="text-5xl">👶</div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white retro-glow">
+                  Explicando como se você tivesse 5 anos
+                </h2>
+                <p className="text-white/80 text-sm mt-1">Agora sim! 🎉</p>
+              </div>
+            </div>
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
+              {heuristic.eli5}
+            </p>
+          </div>
+
+          {/* RED FLAG - DESTAQUE */}
+          {heuristic.whyRedFlag && (
+            <div className="relative p-8 bg-gradient-to-br from-red-900/40 to-orange-900/40 rounded-lg shadow-lg transform hover:scale-102 transition-all border border-red-600/30">
+              <div className="absolute top-4 right-4 text-4xl opacity-10">
+                ⚠️
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-3xl">🚩</div>
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-red-300">
+                    Por que isso é uma Red Flag?
+                  </h2>
+                  <p className="text-red-200/70 text-sm mt-1">Atenção ao problema! ⚡</p>
+                </div>
+              </div>
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-normal bg-black/10 p-6 rounded-lg border border-red-600/20">
+                {heuristic.whyRedFlag}
+              </p>
+            </div>
+          )}
+
+          {/* Share Section */}
+          <div className="retro-card">
+            <div className="flex items-center gap-4 flex-wrap">
+              <Icons.FaShareAlt className="text-2xl text-[#8b5cf6]" />
+              <span className="font-bold">Compartilhar:</span>
+              <div className="flex gap-2 flex-wrap">
+                <button
+                  onClick={() => handleShare('twitter')}
+                  className="px-4 py-2 bg-blue-500 hover:bg-blue-600 transition-colors"
+                >
+                  <Icons.FaTwitter className="inline mr-1" /> Twitter
+                </button>
+                <button
+                  onClick={() => handleShare('facebook')}
+                  className="px-4 py-2 bg-blue-700 hover:bg-blue-800 transition-colors"
+                >
+                  <Icons.FaFacebook className="inline mr-1" /> Facebook
+                </button>
+                <button
+                  onClick={() => handleShare('linkedin')}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition-colors"
+                >
+                  <Icons.FaLinkedin className="inline mr-1" /> LinkedIn
+                </button>
+                <button
+                  onClick={() => handleShare('whatsapp')}
+                  className="px-4 py-2 bg-green-600 hover:bg-green-700 transition-colors"
+                >
+                  <Icons.FaWhatsapp className="inline mr-1" /> WhatsApp
+                </button>
+                <button
+                  onClick={() => handleShare('instagram')}
+                  className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-colors"
+                >
+                  <Icons.FaInstagram className="inline mr-1" /> Instagram
+                </button>
+                <button
+                  onClick={() => handleShare('tiktok')}
+                  className="px-4 py-2 bg-black hover:bg-gray-900 transition-colors"
+                >
+                  <Icons.FaTiktok className="inline mr-1" /> TikTok
+                </button>
+                <button
+                  onClick={copyToClipboard}
+                  className="px-4 py-2 retro-border hover:bg-[#8b5cf6]/20 transition-colors"
+                >
+                  <Icons.FaCopy className="inline mr-1" /> Copiar Link
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* História */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaHistory className="text-2xl text-[#fbbf24]" />
+                <h2 className="text-2xl font-bold text-[#fbbf24]">História</h2>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                {heuristic.history}
+              </p>
+            </div>
+
+            {/* Inventor */}
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaUser className="text-2xl text-[#10b981]" />
+                <h2 className="text-2xl font-bold text-[#10b981]">Quem Inventou</h2>
+              </div>
+              <p className="text-gray-300">
+                <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
+              </p>
+              <p className="text-gray-500 mt-2">
+                Ano: {heuristic.year}
+              </p>
+            </div>
+          </div>
+
+          {/* Purpose */}
           <div className="retro-card">
             <div className="flex items-center gap-3 mb-4">
-              <Icons.FaHistory className="text-2xl text-[#fbbf24]" />
-              <h2 className="text-2xl font-bold text-[#fbbf24]">História</h2>
+              <Icons.FaBullseye className="text-2xl text-[#ec4899]" />
+              <h2 className="text-2xl font-bold text-[#ec4899]">Para que serve</h2>
+            </div>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              {heuristic.purpose}
+            </p>
+          </div>
+
+          {/* Detailed Explanation */}
+          <div className="retro-card">
+            <div className="flex items-center gap-3 mb-4">
+              <Icons.FaGraduationCap className="text-2xl text-[#06b6d4]" />
+              <h2 className="text-2xl font-bold text-[#06b6d4]">Explicação Detalhada</h2>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              {heuristic.history}
+              {heuristic.detailed}
             </p>
           </div>
 
-          {/* Inventor */}
-          <div className="retro-card">
-            <div className="flex items-center gap-3 mb-4">
-              <Icons.FaUser className="text-2xl text-[#10b981]" />
-              <h2 className="text-2xl font-bold text-[#10b981]">Quem Inventou</h2>
-            </div>
-            <p className="text-gray-300">
-              <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
-            </p>
-            <p className="text-gray-500 mt-2">
-              Ano: {heuristic.year}
-            </p>
-          </div>
-        </div>
-
-        {/* Purpose */}
-        <div className="retro-card mb-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Icons.FaBullseye className="text-2xl text-[#ec4899]" />
-            <h2 className="text-2xl font-bold text-[#ec4899]">Para que serve</h2>
-          </div>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            {heuristic.purpose}
-          </p>
-        </div>
-
-        {/* Detailed Explanation */}
-        <div className="retro-card mb-6">
-          <div className="flex items-center gap-3 mb-4">
-            <Icons.FaGraduationCap className="text-2xl text-[#06b6d4]" />
-            <h2 className="text-2xl font-bold text-[#06b6d4]">Explicação Detalhada</h2>
-          </div>
-          <p className="text-gray-300 leading-relaxed">
-            {heuristic.detailed}
-          </p>
-        </div>
-
-        {/* Related Heuristics */}
-        {relatedHeuristicsData.length > 0 && (
-          <div className="retro-card mb-6">
-            <div className="flex items-center gap-3 mb-4">
-              <Icons.FaNetworkWired className="text-2xl text-[#8b5cf6]" />
-              <h2 className="text-2xl font-bold text-[#8b5cf6]">
-                Heurísticas Relacionadas
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {relatedHeuristicsData.map(related => {
-                const relatedCat = categories.find(c => c.id === related.category);
-                return (
-                  <Link
-                    key={related.id}
-                    to={`/heuristica/${related.id}`}
-                    className="p-4 border-2 border-[#8b5cf6]/50 hover:border-[#8b5cf6] hover:bg-[#8b5cf6]/10 transition-all"
-                  >
-                    <h3
-                      className="font-bold mb-1"
-                      style={{ color: relatedCat?.color || '#8b5cf6' }}
+          {/* Related Heuristics */}
+          {relatedHeuristicsData.length > 0 && (
+            <div className="retro-card">
+              <div className="flex items-center gap-3 mb-4">
+                <Icons.FaNetworkWired className="text-2xl text-[#8b5cf6]" />
+                <h2 className="text-2xl font-bold text-[#8b5cf6]">
+                  Heurísticas Relacionadas
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {relatedHeuristicsData.map(related => {
+                  const relatedCat = categories.find(c => c.id === related.category);
+                  return (
+                    <Link
+                      key={related.id}
+                      to={`/heuristica/${related.id}`}
+                      className="p-4 border-2 border-[#8b5cf6]/50 hover:border-[#8b5cf6] hover:bg-[#8b5cf6]/10 transition-all"
                     >
-                      {related.title}
-                    </h3>
-                    <p className="text-sm text-gray-400">
-                      {related.subtitle}
-                    </p>
-                  </Link>
-                );
-              })}
+                      <h3
+                        className="font-bold mb-1"
+                        style={{ color: relatedCat?.color || '#8b5cf6' }}
+                      >
+                        {related.title}
+                      </h3>
+                      <p className="text-sm text-gray-400">
+                        {related.subtitle}
+                      </p>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
-        {/* YouTube Videos */}
+        {/* YouTube Videos - Full Width */}
         {heuristic.youtubeVideos && heuristic.youtubeVideos.length > 0 && (
           <div className="retro-card mb-6">
             <div className="flex items-center gap-3 mb-4">
@@ -322,7 +507,7 @@ export default function Heuristic({ params }) {
           </div>
         )}
 
-        {/* Sources and References */}
+        {/* Sources and References - Full Width */}
         {heuristic.sources && heuristic.sources.length > 0 && (
           <div className="retro-card mb-6">
             <div className="flex items-center gap-3 mb-4">

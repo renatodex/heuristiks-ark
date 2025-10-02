@@ -6,7 +6,7 @@ export default function HeuristicCard({ heuristic, categoryColor, categoryName, 
 
   return (
     <Link
-      to={`/heuristica/${heuristic.id}`}
+      to={`/${heuristic.id}`}
       className="retro-card block group cursor-pointer"
     >
       {/* Category Badge */}
