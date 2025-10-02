@@ -139,6 +139,27 @@ export default function Heuristic({ params }) {
           </p>
         </div>
 
+        {/* RED FLAG - DESTAQUE */}
+        {heuristic.whyRedFlag && (
+          <div className="relative mb-12 p-8 bg-gradient-to-br from-red-900/40 to-orange-900/40 rounded-lg shadow-lg transform hover:scale-102 transition-all border border-red-600/30">
+            <div className="absolute top-4 right-4 text-4xl opacity-10">
+              ⚠️
+            </div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="text-3xl">🚩</div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-red-300">
+                  Por que isso é uma Red Flag?
+                </h2>
+                <p className="text-red-200/70 text-sm mt-1">Atenção ao problema! ⚡</p>
+              </div>
+            </div>
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-normal bg-black/10 p-6 rounded-lg border border-red-600/20">
+              {heuristic.whyRedFlag}
+            </p>
+          </div>
+        )}
+
         {/* Share Section */}
         <div className="retro-card mb-12">
           <div className="flex items-center gap-4 flex-wrap">
