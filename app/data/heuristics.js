@@ -42,7 +42,7 @@ export const heuristics = [
     history: 'Thomas McCabe desenvolveu esta métrica para medir a complexidade estrutural de um programa. Ele percebeu que quanto mais caminhos possíveis um código tinha, mais difícil era testá-lo e mantê-lo. Publicou o paper "A Complexity Measure" que se tornou referência.',
     purpose: 'Medir a complexidade estrutural do código e estimar o número de testes necessários para cobertura completa.',
     whyRedFlag: 'Alta complexidade ciclomática torna o código difícil de testar completamente e aumenta a probabilidade de bugs não detectados. Indica que a função/método está fazendo coisas demais e precisa ser dividida em partes menores. Quanto mais caminhos, mais cenários para testar e mais chances de algo dar errado.',
-    eli5: 'Imagina um labirinto. Quantas escolhas diferentes você tem que fazer para sair? Cada escolha é como um "if" no código. Quanto mais escolhas, mais complicado fica!',
+    eli5: 'Imagina um labirinto. Conforme você avança e escolhe novos caminhos, cada caminho escolhido aumenta sua insegurança sobre ter escolhido o caminho correto. Quanto mais escolhas, mais complicado fica!',
     detailed: 'A Complexidade Ciclomática conta o número de caminhos linearmente independentes através do código. É calculada analisando o grafo de controle de fluxo do programa. Um valor alto indica que o código tem muitos caminhos de execução, tornando-o difícil de testar e manter. A fórmula é: M = E - N + 2P, onde E = arestas, N = nós, P = componentes conectados. Valores acima de 10 são considerados complexos.',
     relatedHeuristics: ['cognitive-complexity'],
     youtubeVideos: [],
