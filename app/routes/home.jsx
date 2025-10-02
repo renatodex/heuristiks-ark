@@ -7,8 +7,8 @@ import HeroAnimation from "../components/HeroAnimation";
 
 export function meta() {
   return [
-    { title: "Arca das Heurísticas - Conceitos poderosos para todos" },
-    { name: "description", content: "Catálogo elegante de heurísticas de programação e áreas técnicas, úteis para todas as pessoas e profissões." },
+    { title: "Arca das Heurísticas - Conhecimento poderoso para todos" },
+    { name: "description", content: "Catálogo gratuito e aberto de heurísticas: princípios práticos e atemporais úteis para todas as pessoas e profissões. Aprenda e aplique em qualquer área da vida." },
   ];
 }
 
@@ -42,7 +42,7 @@ export default function Home() {
               <span className="gradient-text retro-glow">HEURÍSTICAS</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto font-light">
-              Princípios poderosos de programação e áreas técnicas que são{" "}
+              Princípios poderosos e atemporais que são{" "}
               <span className="text-[#8b5cf6] font-semibold">úteis para todas as pessoas</span> e profissões.
               Catalogados de forma elegante e acessível.
             </p>
@@ -67,6 +67,98 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* O que são Heurísticas - Seção Explicativa */}
+        <section className="my-20 max-w-8xl mx-auto">
+          <div className="relative retro-card p-8 md:p-12 bg-gradient-to-br from-[#8b5cf6]/10 to-[#ec4899]/10 border-2 border-[#8b5cf6]/30">
+            {/* Decoração de fundo */}
+            <div className="absolute top-6 right-6 text-6xl opacity-10">
+              💡
+            </div>
+
+            {/* Badge - Iniciativa Aberta */}
+            <div className="flex justify-center mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#10b981]/20 border border-[#10b981]/40 rounded-full text-xs font-semibold text-[#10b981] backdrop-blur-sm">
+                <span>✨</span> Iniciativa 100% Gratuita e Aberta
+              </span>
+            </div>
+
+            {/* Título */}
+            <div className="mb-8 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                <span className="gradient-text retro-glow">O que são Heurísticas?</span>
+              </h2>
+              <p className="text-gray-400 text-sm md:text-base">
+                Conhecimento poderoso acessível para todos
+              </p>
+            </div>
+
+            {/* Explicação Principal */}
+            <div className="space-y-6 mb-10">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                <span className="text-[#8b5cf6] font-bold">Heurísticas</span> são{" "}
+                <span className="text-white font-semibold">regras práticas, atalhos mentais ou princípios</span>{" "}
+                que ajudam a tomar decisões rapidamente e resolver problemas de forma eficiente.
+              </p>
+
+              <p className="text-base md:text-lg text-gray-400 leading-relaxed">
+                Não são fórmulas perfeitas, mas sim <span className="text-[#ec4899]">diretrizes testadas e aprovadas</span> que
+                funcionam bem na maioria das situações. <span className="text-white font-semibold">Podem ser aplicadas em qualquer área da vida:</span> negócios,
+                educação, saúde, gestão, criatividade, e muito mais.
+              </p>
+
+              <div className="bg-[#8b5cf6]/10 border-l-4 border-[#8b5cf6] p-4 rounded-r">
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  <span className="font-bold text-[#8b5cf6]">🌍 Nossa Missão:</span> Democratizar o acesso a heurísticas poderosas,
+                  tornando este conhecimento acessível e compreensível para todas as pessoas, independente da sua área de atuação.
+                  Este é um projeto aberto, gratuito e feito com amor para a comunidade.
+                </p>
+              </div>
+            </div>
+
+            {/* Cards de Exemplos */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-black/20 backdrop-blur-sm p-5 rounded-lg border border-[#8b5cf6]/20 hover:border-[#8b5cf6]/40 transition-all">
+                <div className="text-3xl mb-3">🎯</div>
+                <h3 className="text-[#8b5cf6] font-bold mb-2 text-sm">Universalmente Aplicável</h3>
+                <p className="text-xs text-gray-400">
+                  Funciona em qualquer área: trabalho, estudos, vida pessoal
+                </p>
+              </div>
+
+              <div className="bg-black/20 backdrop-blur-sm p-5 rounded-lg border border-[#ec4899]/20 hover:border-[#ec4899]/40 transition-all">
+                <div className="text-3xl mb-3">⚡</div>
+                <h3 className="text-[#ec4899] font-bold mb-2 text-sm">Decisões Rápidas</h3>
+                <p className="text-xs text-gray-400">
+                  Atalhos mentais para resolver problemas complexos
+                </p>
+              </div>
+
+              <div className="bg-black/20 backdrop-blur-sm p-5 rounded-lg border border-[#06b6d4]/20 hover:border-[#06b6d4]/40 transition-all">
+                <div className="text-3xl mb-3">🧠</div>
+                <h3 className="text-[#06b6d4] font-bold mb-2 text-sm">Sabedoria Coletiva</h3>
+                <p className="text-xs text-gray-400">
+                  Conhecimento acumulado de décadas de experiência
+                </p>
+              </div>
+            </div>
+
+            {/* Exemplo Prático */}
+            <div className="bg-gradient-to-r from-[#fbbf24]/10 to-[#10b981]/10 p-6 rounded-lg border border-[#fbbf24]/20">
+              <div className="flex items-start gap-4">
+                <div className="text-3xl flex-shrink-0">📚</div>
+                <div>
+                  <h3 className="text-[#fbbf24] font-bold mb-2">Exemplo Prático</h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    <span className="font-semibold text-white">Princípio de Pareto (80/20):</span> 80% dos resultados
+                    vêm de 20% dos esforços. Você pode aplicar isso ao estudar para uma prova, organizar sua casa,
+                    priorizar tarefas no trabalho, ou até escolher em que investir seu tempo livre.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Category Filter */}
         <div className="mb-16">
