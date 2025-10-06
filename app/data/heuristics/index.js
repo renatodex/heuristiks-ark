@@ -22,6 +22,8 @@ import dataClumps from './data-clumps.js';
 import changeAmplification from './change-amplification.js';
 import primitiveObsession from './primitive-obsession.js';
 import temporalCoupling from './temporal-coupling.js';
+import impedanceMismatch from './impedance-mismatch.js';
+import goodhartsLaw from './goodharts-law.js';
 
 export const heuristics = [
   cognitiveComplexity,
@@ -48,6 +50,8 @@ export const heuristics = [
   changeAmplification,
   primitiveObsession,
   temporalCoupling,
+  impedanceMismatch,
+  goodhartsLaw,
 ];
 
 export default heuristics;
