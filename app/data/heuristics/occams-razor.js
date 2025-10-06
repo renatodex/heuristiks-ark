@@ -19,4 +19,3 @@ export default {
     { title: 'Wikipedia - Occam\'s Razor', url: 'https://en.wikipedia.org/wiki/Occam%27s_razor' },
   ],
 };
-
