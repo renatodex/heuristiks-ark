@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useEffect } from "react";
 import { heuristics, categories } from "../data/heuristics";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -17,6 +18,7 @@ export function meta({ params }) {
 
 export default function Heuristic({ params }) {
   const { id } = params;
+  const navigate = useNavigate();
   const heuristic = heuristics.find(h => h.id === id);
 
   if (!heuristic) {
@@ -41,6 +43,25 @@ export default function Heuristic({ params }) {
   const relatedHeuristicsData = heuristic.relatedHeuristics
     .map(id => heuristics.find(h => h.id === id))
     .filter(Boolean);
+
+  // Navegação entre heurísticas
+  const currentIndex = heuristics.findIndex(h => h.id === id);
+  const previousHeuristic = heuristics[currentIndex - 1] || heuristics[heuristics.length - 1];
+  const nextHeuristic = heuristics[currentIndex + 1] || heuristics[0];
+
+  // Navegação por teclado (setas)
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowLeft') {
+        navigate(`/heuristica/${previousHeuristic.id}`);
+      } else if (e.key === 'ArrowRight') {
+        navigate(`/heuristica/${nextHeuristic.id}`);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [navigate, previousHeuristic.id, nextHeuristic.id]);
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
   const shareText = `Conheça ${heuristic.title}: ${heuristic.subtitle}`;
@@ -75,14 +96,47 @@ export default function Heuristic({ params }) {
       <Header />
 
       <main className="container mx-auto px-4 py-12">
-        {/* Back Button */}
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 mb-8 text-[#06b6d4] hover:text-[#8b5cf6] transition-colors"
-        >
-          <Icons.FaArrowLeft />
-          Voltar para a Arca
-        </Link>
+        {/* Navigation Bar */}
+        <div className="flex items-center justify-between mb-8 gap-4">
+          {/* Back Button */}
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-[#06b6d4] hover:text-[#8b5cf6] transition-colors"
+          >
+            <Icons.FaArrowLeft />
+            <span className="hidden sm:inline">Voltar para a Arca</span>
+            <span className="sm:hidden">Voltar</span>
+          </Link>
+
+          {/* Navigation Arrows */}
+          <div className="flex flex-col items-end gap-1">
+            <div className="flex items-center gap-3">
+              <Link
+                to={`/heuristica/${previousHeuristic.id}`}
+                className="group retro-button px-4 py-2 hover:bg-[#8b5cf6]/20 transition-all"
+                title={`Anterior: ${previousHeuristic.title}`}
+              >
+                <Icons.FaChevronLeft className="inline text-lg group-hover:scale-110 transition-transform" />
+                <span className="hidden md:inline ml-2">Anterior</span>
+              </Link>
+              <span className="text-gray-500 text-sm">
+                {currentIndex + 1} / {heuristics.length}
+              </span>
+              <Link
+                to={`/heuristica/${nextHeuristic.id}`}
+                className="group retro-button px-4 py-2 hover:bg-[#8b5cf6]/20 transition-all"
+                title={`Próxima: ${nextHeuristic.title}`}
+              >
+                <span className="hidden md:inline mr-2">Próxima</span>
+                <Icons.FaChevronRight className="inline text-lg group-hover:scale-110 transition-transform" />
+              </Link>
+            </div>
+            <span className="hidden md:block text-xs text-gray-600">
+              <Icons.FaKeyboard className="inline mr-1" />
+              Use ← → para navegar
+            </span>
+          </div>
+        </div>
 
         {/* Hero Section */}
         <div className="retro-card mb-12">
