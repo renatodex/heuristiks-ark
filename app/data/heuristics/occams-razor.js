@@ -1,0 +1,22 @@
+export default {
+  id: 'occams-razor',
+  title: 'Occam\'s Razor',
+  subtitle: 'A solução mais simples é geralmente a melhor',
+  category: 'ux',
+  icon: 'FaCut',
+  shortDescription: 'Entre hipóteses que preveem igualmente bem, escolha a com menos premissas.',
+  inventor: 'William de Ockham',
+  year: '~1320',
+  history: 'O frade franciscano William de Ockham formulou este princípio de parcimônia no século 14. Embora originalmente filosófico, tornou-se fundamental no design: quando tiver múltiplas soluções igualmente eficazes, escolha a mais simples.',
+  purpose: 'Evitar complexidade desnecessária e priorizar simplicidade no design.',
+  whyRedFlag: 'Quando interfaces têm mais elementos, opções, e passos do que o necessário, a experiência sofre. Complexidade desnecessária indica falta de foco e disciplina de design. A oportunidade está em questionar cada elemento: "isto é realmente necessário?" e remover o que não agrega valor claro.',
+  eli5: 'Se você pode abrir uma porta só empurrando, não precisa de chave, senha, e impressão digital!',
+  detailed: 'A Navalha de Occam no design significa: remova elementos desnecessários; cada adição deve ter propósito claro; questione cada feature, campo, botão; prefira uma feature bem feita a dez medíocres; simplifique fluxos removendo passos; menos é mais quando a função é preservada. Cuidado: simplicidade não significa simplista - mantenha poder necessário. O objetivo é simplicidade intencional, não limitação arbitrária. Como Antoine de Saint-Exupéry disse: "Perfeição é alcançada não quando nada mais pode ser adicionado, mas quando nada mais pode ser removido."',
+  relatedHeuristics: ['teslers-law', 'hicks-law', 'cognitive-load'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Laws of UX - Occam\'s Razor', url: 'https://lawsofux.com/occams-razor/' },
+    { title: 'Wikipedia - Occam\'s Razor', url: 'https://en.wikipedia.org/wiki/Occam%27s_razor' },
+  ],
+};
+

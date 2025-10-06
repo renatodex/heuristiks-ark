@@ -24,8 +24,32 @@ import primitiveObsession from './primitive-obsession.js';
 import temporalCoupling from './temporal-coupling.js';
 import impedanceMismatch from './impedance-mismatch.js';
 import goodhartsLaw from './goodharts-law.js';
+import aestheticUsabilityEffect from './aesthetic-usability-effect.js';
+import fittsLaw from './fitts-law.js';
+import hicksLaw from './hicks-law.js';
+import jakobsLaw from './jakobs-law.js';
+import millersLaw from './millers-law.js';
+import dohertyThreshold from './doherty-threshold.js';
+import peakEndRule from './peak-end-rule.js';
+import teslersLaw from './teslers-law.js';
+import vonRestorffEffect from './von-restorff-effect.js';
+import zeigarnikEffect from './zeigarnik-effect.js';
+import serialPositionEffect from './serial-position-effect.js';
+import goalGradientEffect from './goal-gradient-effect.js';
+import postelsLaw from './postels-law.js';
+import occamsRazor from './occams-razor.js';
 
-export const heuristics = [
+// Função para embaralhar array usando algoritmo Fisher-Yates
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+const allHeuristics = [
   cognitiveComplexity,
   cyclomaticComplexity,
   bikeShedding,
@@ -52,6 +76,23 @@ export const heuristics = [
   temporalCoupling,
   impedanceMismatch,
   goodhartsLaw,
+  aestheticUsabilityEffect,
+  fittsLaw,
+  hicksLaw,
+  jakobsLaw,
+  millersLaw,
+  dohertyThreshold,
+  peakEndRule,
+  teslersLaw,
+  vonRestorffEffect,
+  zeigarnikEffect,
+  serialPositionEffect,
+  goalGradientEffect,
+  postelsLaw,
+  occamsRazor,
 ];
+
+// Embaralha as heurísticas para não ficar tudo agrupado por categoria
+export const heuristics = shuffleArray(allHeuristics);
 
 export default heuristics;

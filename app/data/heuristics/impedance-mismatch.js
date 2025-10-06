@@ -19,4 +19,3 @@ export default {
     { title: 'Martin Fowler - ORM Hate', url: 'https://martinfowler.com/bliki/OrmHate.html' },
   ],
 };
-
