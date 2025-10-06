@@ -1,0 +1,21 @@
+export default {
+  id: 'lsp',
+  title: 'Liskov Substitution Principle',
+  subtitle: 'Subtipos devem ser substituíveis por seus tipos base',
+  category: 'design',
+  icon: 'FaExchangeAlt',
+  shortDescription: 'Se você trocar uma peça, o sistema ainda deve funcionar.',
+  inventor: 'Barbara Liskov',
+  year: '1987',
+  history: 'Barbara Liskov apresentou este conceito em uma conferência. Ela percebeu que a herança só faz sentido quando o subtipo pode realmente substituir o tipo base sem quebrar o programa.',
+  purpose: 'Garantir que a herança seja usada corretamente, mantendo o comportamento esperado.',
+  whyRedFlag: 'Violações de LSP causam bugs sutis quando subclasses não se comportam como esperado. O código que funcionava com a classe base quebra misteriosamente com subclasses. Indica herança mal projetada e falta de compreensão de contratos. A oportunidade está em revisar hierarquias de herança e garantir que subclasses realmente podem substituir a base, ou usar composição ao invés de herança.',
+  eli5: 'Se você tem um brinquedo que usa pilhas, qualquer pilha do tamanho certo deve funcionar. Não importa a marca!',
+  detailed: 'O Princípio da Substituição de Liskov afirma que objetos de uma classe base devem ser substituíveis por objetos de suas subclasses sem quebrar o programa. Isso significa que subclasses devem respeitar o contrato da classe base: mesmas pré-condições (ou mais fracas), mesmas pós-condições (ou mais fortes), e mesmas invariantes. Exemplo de violação: uma classe Square que herda de Rectangle e quebra a expectativa de que largura e altura são independentes.',
+  relatedHeuristics: ['srp', 'ocp', 'isp', 'dip'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Paper original - Data Abstraction and Hierarchy (Barbara Liskov, 1987)', url: 'https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf' },
+    { title: 'Wikipedia - Liskov Substitution Principle', url: 'https://en.wikipedia.org/wiki/Liskov_substitution_principle' },
+  ],
+};

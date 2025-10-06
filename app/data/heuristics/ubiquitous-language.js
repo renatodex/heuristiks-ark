@@ -1,0 +1,17 @@
+export default {
+  id: 'ubiquitous-language',
+  title: 'Ubiquitous Language',
+  subtitle: 'Todos falam a mesma língua no projeto',
+  category: 'architecture',
+  icon: 'FaBook',
+  shortDescription: 'Use os mesmos termos no código, documentação e conversas.',
+  inventor: 'Eric Evans',
+  year: '2003',
+  history: 'Eric Evans introduziu este conceito em seu livro "Domain-Driven Design". Ele percebeu que confusão na terminologia era uma fonte maior de bugs e mal-entendidos em projetos.',
+  purpose: 'Criar uma linguagem comum entre todos os envolvidos no projeto.',
+  whyRedFlag: 'Quando diferentes termos são usados para o mesmo conceito (ou pior, o mesmo termo para conceitos diferentes), surgem bugs por mal-entendidos e confusão generalizada. Indica falta de comunicação entre negócio e tecnologia. A oportunidade está em estabelecer um vocabulário único e usá-lo consistentemente em código, conversas e documentação.',
+  eli5: 'Se sua família chama o controle remoto de "controle", não comece a chamar de "clicker". Todo mundo vai ficar confuso!',
+  detailed: 'Linguagem Ubíqua é um conceito do Domain-Driven Design que propõe que todos os envolvidos no projeto (desenvolvedores, domain experts, usuários) usem exatamente os mesmos termos para os mesmos conceitos. Se o negócio chama algo de "Pedido", não chame de "Order" no código e "Solicitação" na documentação. Os nomes das classes, métodos, variáveis e conversas devem todos usar o mesmo vocabulário. Isso reduz drasticamente mal-entendidos.',
+  relatedHeuristics: ['conways-law'],
+  youtubeVideos: [],
+};

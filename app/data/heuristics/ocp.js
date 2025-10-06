@@ -1,0 +1,21 @@
+export default {
+  id: 'ocp',
+  title: 'Open/Closed Principle',
+  subtitle: 'Aberto para extensão, fechado para modificação',
+  category: 'design',
+  icon: 'FaUnlockAlt',
+  shortDescription: 'Você deve poder adicionar funcionalidades sem modificar código existente.',
+  inventor: 'Bertrand Meyer',
+  year: '1988',
+  history: 'Bertrand Meyer introduziu este princípio em seu livro "Object-Oriented Software Construction". A ideia é que software deve ser estável (fechado para modificação) mas flexível (aberto para extensão).',
+  purpose: 'Permitir que o código seja estendido sem modificar implementações existentes.',
+  whyRedFlag: 'Código que viola OCP requer modificação de classes existentes toda vez que nova funcionalidade é adicionada, aumentando risco de bugs. Indica falta de abstrações adequadas e design rígido. Cada mudança pode quebrar código existente que estava funcionando. A oportunidade está em usar interfaces e polimorfismo para tornar o código extensível sem modificação.',
+  eli5: 'É como ter um bloco de Lego. Você não quebra o bloco para mudá-lo, você encaixa novos blocos nele!',
+  detailed: 'O Princípio Aberto/Fechado diz que entidades de software devem estar abertas para extensão mas fechadas para modificação. Isso significa que podemos adicionar novos comportamentos sem alterar código existente, reduzindo o risco de bugs. Isso é alcançado através de abstrações (interfaces, classes abstratas) e polimorfismo. Exemplo: em vez de um switch-case gigante, use uma interface e diferentes implementações.',
+  relatedHeuristics: ['srp', 'lsp', 'isp', 'dip'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Open/Closed Principle', url: 'https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle' },
+    { title: 'Livro - Object-Oriented Software Construction (Bertrand Meyer)', url: 'https://www.goodreads.com/book/show/946123.Object_Oriented_Software_Construction' },
+  ],
+};

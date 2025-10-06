@@ -1,0 +1,17 @@
+export default {
+  id: 'bus-factor',
+  title: 'Bus Factor',
+  subtitle: 'Quantas pessoas podem ser atropeladas sem parar o projeto',
+  category: 'team',
+  icon: 'FaBus',
+  shortDescription: 'O número mínimo de pessoas que precisam sair para que o projeto pare.',
+  inventor: 'Comunidade de Desenvolvimento de Software',
+  year: 'Anos 90',
+  history: 'O termo (às vezes chamado de "Truck Factor") surgiu de conversas sobre risco em projetos de software. A pergunta é: "Quantas pessoas precisam ser atropeladas por um ônibus para que o projeto não possa continuar?"',
+  purpose: 'Medir e mitigar o risco de concentração de conhecimento em poucas pessoas.',
+  whyRedFlag: 'Bus factor baixo (1 ou 2) indica risco crítico de continuidade. Se essas pessoas saírem, o projeto pode parar completamente. Revela falha em distribuir conhecimento, falta de documentação, e dependência perigosa de indivíduos. A oportunidade está em implementar pair programming, documentação, rotação de tarefas e compartilhamento ativo de conhecimento.',
+  eli5: 'Se só uma pessoa sabe fazer bolo na sua casa e ela viaja, ninguém come bolo! Ruim, né? É melhor que várias pessoas saibam fazer.',
+  detailed: 'Bus Factor (ou Truck Factor) mede o risco de concentração de conhecimento. Um bus factor de 1 significa que se uma pessoa sair, o projeto pode parar. Bus factor alto é melhor - significa que o conhecimento está distribuído. Para aumentar: documentação, pair programming, rotação de tarefas, code reviews, e compartilhamento ativo de conhecimento. Silos de conhecimento são perigosos!',
+  relatedHeuristics: ['knowledge-silos', 'brooks-law'],
+  youtubeVideos: [],
+};

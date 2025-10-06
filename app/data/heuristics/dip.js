@@ -1,0 +1,21 @@
+export default {
+  id: 'dip',
+  title: 'Dependency Inversion Principle',
+  subtitle: 'Dependa de abstrações, não de implementações concretas',
+  category: 'design',
+  icon: 'FaLayerGroup',
+  shortDescription: 'Módulos de alto nível não devem depender de módulos de baixo nível.',
+  inventor: 'Robert C. Martin (Uncle Bob)',
+  year: '2000',
+  history: 'Uncle Bob criou o DIP para resolver o problema de acoplamento forte entre módulos. Ele percebeu que inverter a direção das dependências (fazendo ambos dependerem de abstrações) tornava o código mais flexível.',
+  purpose: 'Reduzir o acoplamento entre módulos através de abstrações.',
+  whyRedFlag: 'Quando módulos de alto nível dependem diretamente de implementações concretas, o código fica rígido e difícil de testar. Mudar uma implementação de baixo nível pode quebrar toda a cadeia. Indica acoplamento forte e falta de testabilidade. A oportunidade está em introduzir abstrações (interfaces) para desacoplar e permitir substituições e testes mais fáceis.',
+  eli5: 'Em vez de construir sua casa colada na loja de doces (se a loja fechar, você fica triste), você mora perto de "uma loja qualquer". Aí se uma fecha, outra pode abrir lá!',
+  detailed: 'O Princípio da Inversão de Dependência afirma que: 1) Módulos de alto nível não devem depender de módulos de baixo nível; ambos devem depender de abstrações. 2) Abstrações não devem depender de detalhes; detalhes devem depender de abstrações. Isso inverte a direção tradicional de dependência, onde módulos de alto nível dependiam diretamente de implementações concretas. Use interfaces ou classes abstratas para desacoplar.',
+  relatedHeuristics: ['srp', 'ocp', 'lsp', 'isp'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Dependency Inversion Principle', url: 'https://en.wikipedia.org/wiki/Dependency_inversion_principle' },
+    { title: 'Uncle Bob - Dependency Inversion Principle', url: 'https://blog.cleancoder.com/uncle-bob/2016/01/04/ALittleArchitecture.html' },
+  ],
+};

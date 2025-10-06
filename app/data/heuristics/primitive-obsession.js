@@ -1,0 +1,17 @@
+export default {
+  id: 'primitive-obsession',
+  title: 'Primitive Obsession',
+  subtitle: 'Usar tipos primitivos quando deveria criar tipos específicos',
+  category: 'design',
+  icon: 'FaCube',
+  shortDescription: 'Se um dado tem lógica própria, crie um tipo para ele.',
+  inventor: 'Martin Fowler',
+  year: '1999',
+  history: 'Martin Fowler identificou este code smell ao observar que desenvolvedores frequentemente usam strings e números para representar conceitos do domínio que mereciam tipos próprios.',
+  purpose: 'Criar tipos específicos para conceitos do domínio ao invés de usar primitivos.',
+  whyRedFlag: 'Usar primitivos para conceitos de domínio espalha validação e lógica por todo código, elimina type safety, e torna bugs mais prováveis (passar CPF onde deveria ser telefone). Indica falta de modelagem de domínio. A oportunidade está em criar value objects ou tipos específicos que encapsulam validação e comportamento, tornando o código mais seguro e expressivo.',
+  eli5: 'Em vez de só falar "aquele número ali", dê um nome: "seu telefone", "sua idade", "o preço". Fica mais claro!',
+  detailed: 'Primitive Obsession é usar tipos primitivos (string, int, etc.) para representar conceitos do domínio que têm sua própria lógica e regras. Exemplo: usar string para CPF, Email, CEP. Problemas: validação espalhada, sem type safety, difícil de mudar. Solução: criar tipos específicos (classes ou value objects) que encapsulam a validação e comportamento. CPF vira uma classe com validação interna, não apenas uma string.',
+  relatedHeuristics: ['data-clumps', 'srp'],
+  youtubeVideos: [],
+};

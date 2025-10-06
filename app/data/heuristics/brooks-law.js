@@ -1,0 +1,21 @@
+export default {
+  id: 'brooks-law',
+  title: 'Brooks\' Law',
+  subtitle: 'Adicionar pessoas a um projeto atrasado o atrasa ainda mais',
+  category: 'management',
+  icon: 'FaUsers',
+  shortDescription: 'Colocar mais gente não necessariamente aumenta a velocidade.',
+  inventor: 'Fred Brooks',
+  year: '1975',
+  history: 'Fred Brooks observou isso no projeto OS/360 da IBM. Quando o projeto atrasou, mais programadores foram adicionados, mas isso só piorou as coisas. Ele documentou isso no livro clássico "The Mythical Man-Month".',
+  purpose: 'Alertar que adicionar mais pessoas a um projeto pode aumentar a complexidade e a sobrecarga de comunicação.',
+  whyRedFlag: 'Quando gestores reagem a atrasos apenas adicionando mais pessoas, o problema piora. Isso revela má compreensão da natureza do trabalho de software e falta de estratégias alternativas (reduzir escopo, simplificar arquitetura). Indica gestão baseada em pressão ao invés de análise racional. A oportunidade de melhoria está em treinar lideranças sobre a natureza do desenvolvimento de software.',
+  eli5: 'Se 1 pessoa leva 1 hora para comer um bolo, 60 pessoas não vão comer o bolo em 1 minuto! Às vezes, muita gente junto só atrapalha.',
+  detailed: 'A Lei de Brooks explica por que adicionar desenvolvedores a um projeto atrasado geralmente piora a situação. Novos membros precisam ser treinados, aumentam a sobrecarga de comunicação (canais de comunicação crescem exponencialmente), e podem introduzir mais bugs enquanto aprendem. A comunicação entre N pessoas requer N(N-1)/2 canais. Em vez de adicionar pessoas, é melhor reduzir escopo ou repensar a arquitetura.',
+  relatedHeuristics: ['bus-factor', 'conways-law'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Livro - The Mythical Man-Month (Fred Brooks)', url: 'https://en.wikipedia.org/wiki/The_Mythical_Man-Month' },
+    { title: 'Wikipedia - Brooks\' Law', url: 'https://en.wikipedia.org/wiki/Brooks%27s_law' },
+  ],
+};

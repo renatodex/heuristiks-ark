@@ -1,0 +1,21 @@
+export default {
+  id: 'parkinsons-law',
+  title: 'Parkinson\'s Law',
+  subtitle: 'O trabalho se expande para preencher o tempo disponível',
+  category: 'management',
+  icon: 'FaClock',
+  shortDescription: 'Se você tem 2 horas para fazer algo, vai levar 2 horas. Se tem 2 dias, vai levar 2 dias.',
+  inventor: 'C. Northcote Parkinson',
+  year: '1955',
+  history: 'Cyril Parkinson observou na burocracia britânica que o trabalho se expandia para preencher o tempo disponível, independentemente da quantidade real de trabalho necessária. Ele publicou isso em um ensaio satírico no The Economist que se tornou um princípio reconhecido de gestão.',
+  purpose: 'Conscientizar sobre a tendência de usar todo o tempo disponível, mesmo quando a tarefa poderia ser concluída mais rapidamente.',
+  whyRedFlag: 'Quando o time sempre usa exatamente todo o tempo estimado (ou mais), há desperdício de produtividade. Isso indica falta de senso de urgência, estimativas infladas propositalmente, ou procrastinação sistêmica. O resultado é entregas lentas, custos elevados e perda de competitividade. É oportunidade para melhorar estimativas e criar senso de ritmo.',
+  eli5: 'Se sua mãe te dá 1 hora para arrumar o quarto, você leva 1 hora. Se ela te dá o dia todo, você vai enrolar e levar o dia todo!',
+  detailed: 'A Lei de Parkinson afirma que o trabalho se expande para preencher o tempo disponível para sua conclusão. Isso acontece porque tendemos a usar todo o tempo dado, mesmo que possamos terminar mais rápido. Em desenvolvimento de software, isso se manifesta em estimativas infladas, features desnecessariamente complexas, e procrastinação. A solução é criar prazos mais apertados (mas realistas) e dividir trabalho em tarefas menores.',
+  relatedHeuristics: ['bike-shedding'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Ensaio original - Parkinson\'s Law (The Economist, 1955)', url: 'https://www.economist.com/news/1955/11/19/parkinsons-law' },
+    { title: 'Wikipedia - Parkinson\'s Law', url: 'https://en.wikipedia.org/wiki/Parkinson%27s_law' },
+  ],
+};

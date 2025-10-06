@@ -1,0 +1,21 @@
+export default {
+  id: 'overengineering',
+  title: 'Overengineering',
+  subtitle: 'Fazer algo mais complicado do que precisa ser',
+  category: 'design',
+  icon: 'FaCog',
+  shortDescription: 'Criar soluções excessivamente complexas para problemas simples.',
+  inventor: 'Conceito da Engenharia',
+  year: 'N/A',
+  history: 'O termo vem da engenharia tradicional, onde projetar algo com mais recursos ou complexidade do que o necessário aumenta custos e reduz confiabilidade. Em software, manifesta-se como abstrações prematuras e arquiteturas excessivamente complexas.',
+  purpose: 'Alertar contra a tentação de criar soluções mais complexas que o necessário.',
+  whyRedFlag: 'Overengineering desperdiça tempo construindo complexidade que nunca será usada e torna o código mais difícil de entender e manter. Indica que desenvolvedores estão focando em hipotéticos futuros ao invés de necessidades reais. O resultado é código mais caro, mais lento de entregar, e mais propenso a bugs. A melhoria vem de adotar YAGNI e começar simples.',
+  eli5: 'É como usar um robô gigante com 50 botões só para abrir uma porta. As vezes, só girar a maçaneta já resolve!',
+  detailed: 'Overengineering acontece quando criamos soluções mais complexas do que o problema requer. Exemplos: criar abstrações para código usado uma única vez, implementar padrões de design desnecessários, otimizar prematuramente, ou construir "flexibility" que nunca será usada. O custo é código mais difícil de entender e manter. A solução é começar simples e adicionar complexidade apenas quando necessário (YAGNI - You Aren\'t Gonna Need It).',
+  relatedHeuristics: ['srp'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Overengineering', url: 'https://en.wikipedia.org/wiki/Overengineering' },
+    { title: 'Article - YAGNI Principle', url: 'https://martinfowler.com/bliki/Yagni.html' },
+  ],
+};

@@ -1,0 +1,21 @@
+export default {
+  id: 'srp',
+  title: 'Single Responsibility Principle',
+  subtitle: 'Cada coisa faz só uma tarefa',
+  category: 'design',
+  icon: 'FaBullseye',
+  shortDescription: 'Uma classe/função deve ter apenas uma razão para mudar.',
+  inventor: 'Robert C. Martin (Uncle Bob)',
+  year: '2000',
+  history: 'Uncle Bob formulou o SRP como parte dos princípios SOLID. Ele percebeu que código que faz muitas coisas diferentes muda com frequência e por razões diferentes, tornando-se frágil.',
+  purpose: 'Manter o código focado e fácil de manter, com cada módulo tendo uma única responsabilidade.',
+  whyRedFlag: 'Quando classes ou funções violam SRP fazendo múltiplas coisas não relacionadas, o código torna-se frágil e difícil de manter. Mudanças em uma responsabilidade podem quebrar outras. Indica falta de coesão e design mal pensado. A oportunidade é refatorar em módulos menores e focados, cada um com uma única razão para mudar.',
+  eli5: 'Uma tesoura corta, um lápis escreve. Se você tentar fazer uma tesoura que também escreve, vai ficar ruim nas duas coisas!',
+  detailed: 'O Princípio da Responsabilidade Única afirma que uma classe deve ter apenas uma razão para mudar, ou seja, apenas uma responsabilidade. Isso não significa fazer apenas uma coisa, mas que todas as coisas que faz devem estar relacionadas a uma única responsabilidade. Exemplo ruim: uma classe User que valida, persiste e envia email. Exemplo bom: User, UserValidator, UserRepository, EmailService.',
+  relatedHeuristics: ['ocp', 'lsp', 'isp', 'dip'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - SOLID Principles', url: 'https://en.wikipedia.org/wiki/SOLID' },
+    { title: 'Uncle Bob - The Single Responsibility Principle', url: 'https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html' },
+  ],
+};

@@ -1,0 +1,17 @@
+export default {
+  id: 'knowledge-silos',
+  title: 'Knowledge Silos',
+  subtitle: 'Quando conhecimento fica preso em uma pessoa ou grupo',
+  category: 'team',
+  icon: 'FaLock',
+  shortDescription: 'Conhecimento crítico concentrado em poucas pessoas.',
+  inventor: 'Conceito de Gestão Organizacional',
+  year: 'N/A',
+  history: 'O conceito de silos vem da gestão organizacional, referindo-se a departamentos isolados. Em software, refere-se a conhecimento que fica "preso" com indivíduos ou times específicos.',
+  purpose: 'Identificar e eliminar concentração perigosa de conhecimento.',
+  whyRedFlag: 'Silos de conhecimento criam gargalos (só uma pessoa pode fazer certa tarefa), aumentam risco (bus factor baixo), e dificultam colaboração. Indica cultura individualista, falta de documentação, ou trabalho isolado. A oportunidade está em promover pair programming, documentar conhecimento crítico, rotacionar tarefas, e criar cultura de compartilhamento.',
+  eli5: 'É como se só você soubesse onde está escondido o chocolate. Se você sair de casa, ninguém acha! Melhor contar para todo mundo.',
+  detailed: 'Knowledge Silos acontecem quando informação crítica está concentrada em poucas pessoas e não é compartilhada. Isso cria risco (relacionado ao Bus Factor), dificulta colaboração, e cria gargalos. Causas: falta de documentação, pessoas trabalhando isoladamente, falta de pair programming, cultura de "herói". Soluções: documentação, code reviews, rotação de tarefas, pair/mob programming, e cultura de compartilhamento.',
+  relatedHeuristics: ['bus-factor'],
+  youtubeVideos: [],
+};

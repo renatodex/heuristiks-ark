@@ -1,0 +1,17 @@
+export default {
+  id: 'change-amplification',
+  title: 'Change Amplification',
+  subtitle: 'Uma pequena mudança vira uma saga gigante',
+  category: 'complexity',
+  icon: 'FaArrowUp',
+  shortDescription: 'Quando mudanças simples requerem esforço desproporcional.',
+  inventor: 'John Ousterhout',
+  year: '2018',
+  history: 'John Ousterhout descreveu Change Amplification em "A Philosophy of Software Design" como um dos principais sintomas de complexidade em software.',
+  purpose: 'Identificar quando o custo de mudanças está desproporcional ao seu tamanho conceitual.',
+  whyRedFlag: 'Quando mudanças conceitual mente simples exigem esforço gigantesco, a velocidade de desenvolvimento desaba e a frustração aumenta. Indica arquitetura rígida, acoplamento excessivo, ou falta de abstrações adequadas. O resultado é entregas lentas e desenvolvedores desmotivados. A oportunidade está em redesenhar para criar módulos mais independentes e abstrações que absorvam mudanças.',
+  eli5: 'É como quando você quer mudar um brinquedo de lugar, mas precisa mover a cama, o armário, a mesa... Tudo por causa de um brinquedinho!',
+  detailed: 'Change Amplification acontece quando uma mudança conceitualmente simples requer modificações em muitos lugares diferentes do código. É similar ao Shotgun Surgery, mas foca no custo ampliado da mudança. Exemplo: adicionar um novo campo em um formulário requer mudanças no frontend, backend, banco de dados, validação, testes, etc. Design modular e boas abstrações reduzem change amplification.',
+  relatedHeuristics: ['shotgun-surgery', 'cognitive-complexity'],
+  youtubeVideos: [],
+};

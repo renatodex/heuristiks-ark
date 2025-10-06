@@ -1,0 +1,21 @@
+export default {
+  id: 'isp',
+  title: 'Interface Segregation Principle',
+  subtitle: 'Não obrigue ninguém a depender do que não usa',
+  category: 'design',
+  icon: 'FaFilter',
+  shortDescription: 'Interfaces devem ser específicas para cada cliente.',
+  inventor: 'Robert C. Martin (Uncle Bob)',
+  year: '2000',
+  history: 'Uncle Bob formulou o ISP após observar que interfaces "gordas" (com muitos métodos) forçavam classes a implementar métodos que não usavam, criando dependências desnecessárias.',
+  purpose: 'Manter interfaces pequenas e focadas, evitando dependências desnecessárias.',
+  whyRedFlag: 'Interfaces gordas forçam implementações a incluir métodos desnecessários, criando acoplamento desnecessário e implementações vazias ou com exceções. Indica design que não considerou as necessidades específicas de cada cliente. A oportunidade está em quebrar interfaces grandes em interfaces menores e mais coesas.',
+  eli5: 'Se você vai ao restaurante só para beber suco, não precisa saber fazer todos os pratos do cardápio!',
+  detailed: 'O Princípio da Segregação de Interface afirma que nenhum cliente deve ser forçado a depender de métodos que não usa. Em vez de uma interface grande com muitos métodos, crie interfaces menores e específicas. Exemplo ruim: IWorker com métodos work() e eat(), forçando robôs a implementar eat(). Exemplo bom: IWorkable com work() e IFeedable com eat().',
+  relatedHeuristics: ['srp', 'ocp', 'lsp', 'dip'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Interface Segregation Principle', url: 'https://en.wikipedia.org/wiki/Interface_segregation_principle' },
+    { title: 'Uncle Bob - The Interface Segregation Principle', url: 'https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html' },
+  ],
+};

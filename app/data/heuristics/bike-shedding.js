@@ -1,0 +1,21 @@
+export default {
+  id: 'bike-shedding',
+  title: 'Bike Shedding',
+  subtitle: 'Lei da trivialidade - perder tempo com detalhes pequenos',
+  category: 'management',
+  icon: 'FaBicycle',
+  shortDescription: 'Tendência de gastar muito tempo em decisões triviais e pouco tempo em decisões importantes.',
+  inventor: 'C. Northcote Parkinson',
+  year: '1957',
+  history: 'Parkinson usou o exemplo de um comitê que gastou muito tempo discutindo a cor de um bike shed (estacionamento de bicicletas), mas aprovou rapidamente a construção de uma usina nuclear. As pessoas se sentem mais confortáveis debatendo tópicos simples que todos entendem, evitando decisões complexas.',
+  purpose: 'Alertar sobre a tendência de focar energia em decisões triviais ao invés de questões realmente importantes.',
+  whyRedFlag: 'Quando o time gasta mais tempo debatendo trivialidades (nomes, formatação, cores) do que arquitetura e decisões críticas, há desperdício de tempo e energia. Isso indica falta de priorização, medo de tomar decisões difíceis, ou falta de confiança técnica do time. O resultado é atraso em entregas importantes e decisões arquiteturais mal pensadas.',
+  eli5: 'Imagina que você vai construir um castelo e um lugar para guardar sua bicicleta. Aí você passa 5 minutos decidindo sobre o castelo e 2 horas discutindo de que cor pintar o lugar da bicicleta! Isso é Bike Shedding.',
+  detailed: 'O Bike Shedding (ou Lei da Trivialidade) é um fenômeno onde grupos gastam tempo desproporcional em questões triviais que todos entendem, enquanto decisões complexas e importantes são aprovadas rapidamente porque poucas pessoas se sentem qualificadas para opinar. Em projetos de software, isso se manifesta em longas discussões sobre indentação, nomes de variáveis ou cores de UI, enquanto decisões arquiteturais críticas passam sem debate adequado.',
+  relatedHeuristics: ['parkinsons-law'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Law of Triviality (Bike-shedding)', url: 'https://en.wikipedia.org/wiki/Law_of_triviality' },
+    { title: 'Parkinson\'s Law - The book', url: 'https://en.wikipedia.org/wiki/Parkinson%27s_law' },
+  ],
+};

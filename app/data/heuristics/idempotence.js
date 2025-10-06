@@ -1,0 +1,22 @@
+export default {
+  id: 'idempotence',
+  title: 'Idempotência',
+  subtitle: 'Fazer a mesma coisa várias vezes dá o mesmo resultado',
+  category: 'architecture',
+  icon: 'FaRepeat',
+  shortDescription: 'Uma operação é idempotente se executá-la múltiplas vezes produz o mesmo resultado.',
+  inventor: 'Conceito Matemático',
+  year: 'Século 19',
+  history: 'O conceito vem da matemática, mas foi adotado pela computação. É especialmente importante em sistemas distribuídos onde mensagens podem ser duplicadas ou retransmitidas.',
+  purpose: 'Garantir que operações possam ser repetidas sem efeitos colaterais indesejados.',
+  whyRedFlag: 'Operações não idempotentes em APIs ou sistemas distribuídos causam bugs difíceis de rastrear quando mensagens são duplicadas ou retransmitidas. Isso leva a dados corrompidos, cobranças duplicadas, ou estados inconsistentes. Indica falta de design robusto para ambientes reais onde redes falham e mensagens podem ser reprocessadas.',
+  eli5: 'Apertar o botão de ligar a luz. Se a luz já está acesa e você aperta de novo, ela continua acesa (não fica "mais acesa"). Isso é idempotência!',
+  detailed: 'Idempotência significa que executar uma operação uma ou múltiplas vezes produz o mesmo resultado. Em APIs REST, métodos GET, PUT e DELETE devem ser idempotentes. Por exemplo, deletar um recurso uma vez ou dez vezes deixa o sistema no mesmo estado (recurso deletado). Isso é crucial para sistemas que precisam retransmitir operações, pois garante que duplicatas não causem efeitos colaterais indesejados.',
+  relatedHeuristics: [],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Idempotence', url: 'https://en.wikipedia.org/wiki/Idempotence' },
+    { title: 'MDN - Idempotent HTTP Methods', url: 'https://developer.mozilla.org/en-US/docs/Glossary/Idempotent' },
+    { title: 'RFC 7231 - HTTP/1.1 Semantics (Section on Idempotent Methods)', url: 'https://tools.ietf.org/html/rfc7231#section-4.2.2' },
+  ],
+};

@@ -1,0 +1,17 @@
+export default {
+  id: 'shotgun-surgery',
+  title: 'Shotgun Surgery',
+  subtitle: 'Uma pequena mudança requer alterações em muitos lugares',
+  category: 'design',
+  icon: 'FaBomb',
+  shortDescription: 'Quando mudar uma coisa exige mexer em mil lugares diferentes.',
+  inventor: 'Martin Fowler',
+  year: '1999',
+  history: 'Martin Fowler descreveu este code smell em "Refactoring: Improving the Design of Existing Code". O nome vem da imagem de uma espingarda (shotgun) que espalha o impacto em uma área ampla.',
+  purpose: 'Identificar código onde responsabilidades estão espalhadas demais.',
+  whyRedFlag: 'Quando uma mudança simples requer tocar em dezenas de lugares, há alto risco de esquecer algum lugar e introduzir bugs. Indica que uma responsabilidade está fragmentada ao invés de centralizada. O custo de manutenção é alto e a velocidade de desenvolvimento cai. A oportunidade está em refatorar para centralizar responsabilidades relacionadas.',
+  eli5: 'Imagina que para trocar de roupa, você precisa mudar também as cortinas, os lençóis e o tapete porque tudo tem que combinar. Cansativo, né?',
+  detailed: 'Shotgun Surgery é um code smell onde fazer uma mudança simples requer alterações espalhadas por muitos módulos diferentes. Isso acontece quando uma responsabilidade está fragmentada pelo sistema. Exemplo: mudar um formato de data exige alterar 20 arquivos. Isso aumenta o risco de bugs (esquecer um lugar) e o custo de manutenção. Solução: refatorar para centralizar a responsabilidade em um único lugar.',
+  relatedHeuristics: ['srp', 'code-churn', 'change-amplification'],
+  youtubeVideos: [],
+};

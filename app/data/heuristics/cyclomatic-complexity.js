@@ -1,0 +1,21 @@
+export default {
+  id: 'cyclomatic-complexity',
+  title: 'Cyclomatic Complexity',
+  subtitle: 'Número de caminhos independentes através do código',
+  category: 'complexity',
+  icon: 'FaRoute',
+  shortDescription: 'Mede a quantidade de caminhos diferentes que o código pode seguir.',
+  inventor: 'Thomas J. McCabe',
+  year: '1976',
+  history: 'Thomas McCabe desenvolveu esta métrica para medir a complexidade estrutural de um programa. Ele percebeu que quanto mais caminhos possíveis um código tinha, mais difícil era testá-lo e mantê-lo. Publicou o paper "A Complexity Measure" que se tornou referência.',
+  purpose: 'Medir a complexidade estrutural do código e estimar o número de testes necessários para cobertura completa.',
+  whyRedFlag: 'Alta complexidade ciclomática torna o código difícil de testar completamente e aumenta a probabilidade de bugs não detectados. Indica que a função/método está fazendo coisas demais e precisa ser dividida em partes menores. Quanto mais caminhos, mais cenários para testar e mais chances de algo dar errado.',
+  eli5: 'Imagina um labirinto. Conforme você avança e escolhe novos caminhos, cada caminho escolhido aumenta sua insegurança sobre ter escolhido o caminho correto. Quanto mais escolhas, mais complicado fica!',
+  detailed: 'A Complexidade Ciclomática conta o número de caminhos linearmente independentes através do código. É calculada analisando o grafo de controle de fluxo do programa. Um valor alto indica que o código tem muitos caminhos de execução, tornando-o difícil de testar e manter. A fórmula é: M = E - N + 2P, onde E = arestas, N = nós, P = componentes conectados. Valores acima de 10 são considerados complexos.',
+  relatedHeuristics: ['cognitive-complexity'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Paper original - A Complexity Measure (Thomas McCabe, 1976)', url: 'https://www.literateprogramming.com/mccabe.pdf' },
+    { title: 'Wikipedia - Cyclomatic Complexity', url: 'https://en.wikipedia.org/wiki/Cyclomatic_complexity' },
+  ],
+};

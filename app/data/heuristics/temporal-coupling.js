@@ -1,0 +1,17 @@
+export default {
+  id: 'temporal-coupling',
+  title: 'Temporal Coupling',
+  subtitle: 'Quando coisas só funcionam em uma ordem específica',
+  category: 'design',
+  icon: 'FaCalendar',
+  shortDescription: 'Dependências escondidas na ordem de execução.',
+  inventor: 'Steve McConnell',
+  year: '1993',
+  history: 'Steve McConnell discutiu este conceito em "Code Complete". Ele observou que quando a ordem de chamadas importa mas não é explícita, bugs surgem facilmente.',
+  purpose: 'Identificar e eliminar dependências ocultas na ordem de execução.',
+  whyRedFlag: 'Quando métodos devem ser chamados em ordem específica mas nada no código garante isso, surgem bugs sutis e difíceis de debugar. Indica API mal projetada onde restrições não são expressas no tipo. A oportunidade está em redesenhar APIs para tornar estados inválidos irrepresentáveis, usando builders, objetos imutáveis, ou máquinas de estado explícitas.',
+  eli5: 'É como ter que colocar o sapato ANTES da meia. Não faz sentido! As coisas devem poder acontecer na ordem que fizer mais sentido.',
+  detailed: 'Temporal Coupling acontece quando métodos ou funções devem ser chamados em uma ordem específica, mas essa restrição não é óbvia no código. Exemplo: você tem que chamar `connect()` antes de `send()`, mas nada no código impede de chamar na ordem errada. Isso causa bugs sutis. Soluções: usar builder patterns, fazer objetos imutáveis que já nascem válidos, ou redesenhar a API para tornar a ordem implícita.',
+  relatedHeuristics: [],
+  youtubeVideos: [],
+};

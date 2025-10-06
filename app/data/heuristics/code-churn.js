@@ -1,0 +1,21 @@
+export default {
+  id: 'code-churn',
+  title: 'Code Churn',
+  subtitle: 'Rotatividade de código - quanto o código muda',
+  category: 'complexity',
+  icon: 'FaSync',
+  shortDescription: 'Mede quanto o código está sendo modificado, reescrito ou deletado ao longo do tempo.',
+  inventor: 'Comunidade de Software Engineering',
+  year: 'Anos 90',
+  history: 'O conceito surgiu quando times começaram a usar sistemas de controle de versão e perceberam que código que muda muito frequentemente tende a ter mais bugs e ser menos estável.',
+  purpose: 'Identificar áreas do código que são instáveis e podem ter problemas de design ou requisitos mal definidos.',
+  whyRedFlag: 'Alto churn indica instabilidade e incerteza. Pode significar que os requisitos não estão claros, o design é inadequado, ou a equipe está constantemente reescrevendo código ao invés de acertar de primeira. Áreas com alto churn tendem a ter mais bugs e são candidatas a refatoração ou redesign completo.',
+  eli5: 'Se você escreve uma história e fica mudando ela toda hora, arriscando rasgar o papel, é sinal que você não tinha certeza do que queria escrever. Código que muda muito pode estar confuso.',
+  detailed: 'Code Churn mede a volatilidade do código através da quantidade de linhas adicionadas, modificadas e removidas em um período. Alto churn pode indicar: incerteza nos requisitos, problemas de design, código experimental, ou simplesmente trabalho ativo. Analisar churn junto com bugs ajuda a identificar áreas problemáticas do código.',
+  relatedHeuristics: ['shotgun-surgery', 'change-amplification'],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Microsoft Research - Code Churn and Bugs', url: 'https://www.microsoft.com/en-us/research/publication/predicting-bugs-from-history/' },
+    { title: 'Article - Understanding Code Churn', url: 'https://linearb.io/blog/what-is-code-churn' },
+  ],
+};

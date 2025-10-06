@@ -1,0 +1,17 @@
+export default {
+  id: 'conways-law',
+  title: 'Conway\'s Law',
+  subtitle: 'A estrutura do sistema reflete a estrutura da organização',
+  category: 'architecture',
+  icon: 'FaBuilding',
+  shortDescription: 'Sistemas refletem a estrutura de comunicação da organização que os criou.',
+  inventor: 'Melvin Conway',
+  year: '1967',
+  history: 'Melvin Conway observou que organizações que projetam sistemas são constrangidas a produzir designs que são cópias das estruturas de comunicação dessas organizações. Se você tem 4 times, vai criar um sistema com 4 componentes principais.',
+  purpose: 'Conscientizar que a estrutura organizacional influencia diretamente a arquitetura do software.',
+  whyRedFlag: 'Quando a arquitetura do sistema é ruim mas espelha perfeitamente a estrutura organizacional problemática, isso revela que problemas de comunicação e estrutura do time estão se manifestando no código. Silos organizacionais criam silos de código. A oportunidade está em reorganizar times para refletir a arquitetura desejada, ou vice-versa.',
+  eli5: 'Se 4 amigos fazem um desenho juntos, cada um no seu canto, o desenho vai ter 4 partes separadas. Se eles não conversam, as partes não vão combinar!',
+  detailed: 'A Lei de Conway afirma que a arquitetura de um sistema será um reflexo da estrutura de comunicação da organização. Se times não se comunicam bem, os módulos que criam também não se integram bem. Se a organização é hierárquica, o software será hierárquico. Isso tem implicações práticas: quer mudar a arquitetura? Talvez precise mudar a estrutura do time. É a base do conceito de "Inverse Conway Maneuver" - estruture os times de acordo com a arquitetura desejada.',
+  relatedHeuristics: ['brooks-law', 'ubiquitous-language'],
+  youtubeVideos: [],
+};

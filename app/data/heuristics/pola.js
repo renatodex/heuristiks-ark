@@ -1,0 +1,17 @@
+export default {
+  id: 'pola',
+  title: 'Principle of Least Astonishment',
+  subtitle: 'O sistema deve se comportar como esperado',
+  category: 'design',
+  icon: 'FaLightbulb',
+  shortDescription: 'As coisas devem funcionar da maneira que as pessoas esperam.',
+  inventor: 'Comunidade de Design de Software',
+  year: 'Anos 70',
+  history: 'Este princípio emergiu da experiência prática de design de interfaces e APIs. Desenvolvedores perceberam que quando o comportamento é inesperado, bugs e frustrações aumentam dramaticamente.',
+  purpose: 'Criar sistemas intuitivos que se comportam de acordo com as expectativas dos usuários.',
+  whyRedFlag: 'Quando o comportamento do sistema surpreende usuários ou desenvolvedores, surgem bugs por uso incorreto e frustração generalizada. Indica naming ruim, inconsistências, ou violação de convenções estabelecidas. A oportunidade está em renomear, reorganizar, e alinhar o comportamento com expectativas razoáveis e convenções da indústria.',
+  eli5: 'Se você vê um botão vermelho grande, espera que ele faça algo importante, tipo parar algo. Se ele só muda a cor da tela, você fica confuso!',
+  detailed: 'O Princípio da Menor Surpresa afirma que um sistema deve se comportar de maneira consistente com o que usuários (ou desenvolvedores) razoavelmente esperam. Violações comuns: funções com nomes enganosos, botões que fazem algo inesperado, APIs que retornam tipos diferentes dependendo do input. Siga convenções, mantenha consistência, e faça o óbvio óbvio.',
+  relatedHeuristics: [],
+  youtubeVideos: [],
+};

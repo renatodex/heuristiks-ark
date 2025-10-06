@@ -1,0 +1,21 @@
+export default {
+  id: 'pareto-principle',
+  title: 'Pareto Principle',
+  subtitle: '80/20 - Foque nos 20% que geram 80% do resultado',
+  category: 'management',
+  icon: 'FaChartLine',
+  shortDescription: '80% dos efeitos vêm de 20% das causas.',
+  inventor: 'Vilfredo Pareto',
+  year: '1896',
+  history: 'Vilfredo Pareto, economista italiano, observou que 80% das terras na Itália pertenciam a 20% da população. Depois percebeu que esse padrão se repetia em muitos lugares: 80% das ervilhas vinham de 20% das vagens em seu jardim!',
+  purpose: 'Priorizar esforços nas áreas que geram maior impacto.',
+  whyRedFlag: 'Quando o time não aplica o princípio de Pareto, há desperdício massivo de recursos. Desenvolver 100% das features quando 20% já resolveriam 80% do problema significa tempo, dinheiro e energia mal gastos. Indica falta de priorização estratégica e análise de valor. A oportunidade está em identificar o que realmente importa e focar nisso primeiro.',
+  eli5: 'Se você tem 10 brinquedos mas brinca mesmo com só 2, esses 2 (20%) te dão quase toda a diversão (80%). Foque no que realmente importa!',
+  detailed: 'O Princípio de Pareto afirma que, em muitos casos, aproximadamente 80% dos efeitos vêm de 20% das causas. Em software: 80% dos bugs estão em 20% do código, 80% do uso vem de 20% das features, 80% do tempo é gasto em 20% das tarefas. Use isso para priorizar esforços: identifique e foque nos 20% mais impactantes.',
+  relatedHeuristics: [],
+  youtubeVideos: [],
+  sources: [
+    { title: 'Wikipedia - Pareto Principle', url: 'https://en.wikipedia.org/wiki/Pareto_principle' },
+    { title: 'Livro - The 80/20 Principle (Richard Koch)', url: 'https://www.goodreads.com/book/show/181206.The_80_20_Principle' },
+  ],
+};

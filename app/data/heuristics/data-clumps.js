@@ -1,0 +1,17 @@
+export default {
+  id: 'data-clumps',
+  title: 'Data Clumps',
+  subtitle: 'Dados que sempre aparecem juntos devem ficar juntos',
+  category: 'design',
+  icon: 'FaObjectGroup',
+  shortDescription: 'Se você sempre usa dados juntos, agrupe-os em uma estrutura.',
+  inventor: 'Martin Fowler',
+  year: '1999',
+  history: 'Martin Fowler identificou este code smell em seu livro sobre refactoring. Ele notou que dados que sempre aparecem juntos têm um relacionamento que deve ser formalizado.',
+  purpose: 'Identificar e agrupar dados relacionados em estruturas coesas.',
+  whyRedFlag: 'Dados que sempre andam juntos mas não estão agrupados indicam abstrações perdidas. Isso leva a repetição de parâmetros, dificuldade em adicionar novos campos relacionados, e código verboso. A oportunidade está em criar uma classe ou struct que represente esse conceito do domínio, melhorando legibilidade e manutenibilidade.',
+  eli5: 'Se você sempre leva o lápis, a borracha e o apontador juntos, que tal colocar tudo em um estojo?',
+  detailed: 'Data Clumps acontecem quando o mesmo grupo de dados aparece junto em muitos lugares: mesmos parâmetros em várias funções, mesmos campos em várias classes. Exemplo: você sempre passa "rua, numero, cidade, cep" juntos. Isso indica que esses dados têm um relacionamento e devem ser agrupados em uma classe ou struct (ex: Endereco). Isso reduz repetição, melhora legibilidade, e facilita mudanças futuras.',
+  relatedHeuristics: ['srp', 'primitive-obsession'],
+  youtubeVideos: [],
+};
