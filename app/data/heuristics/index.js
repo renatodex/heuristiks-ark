@@ -93,6 +93,6 @@ const allHeuristics = [
 ];
 
 // Embaralha as heurísticas para não ficar tudo agrupado por categoria
-export const heuristics = shuffleArray(allHeuristics);
+export const heuristics = allHeuristics;
 
 export default heuristics;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { heuristics, categories } from "../data/heuristics";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,13 +12,29 @@ export function meta() {
   ];
 }
 
+// Função para embaralhar array usando algoritmo Fisher-Yates
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isExplanationOpen, setIsExplanationOpen] = useState(false);
+  const [shuffledHeuristics, setShuffledHeuristics] = useState(heuristics);
+
+  // Embaralha as heurísticas apenas no cliente após a hidratação
+  useEffect(() => {
+    setShuffledHeuristics(shuffleArray(heuristics));
+  }, []);
 
   const filteredHeuristics = selectedCategory
-    ? heuristics.filter(h => h.category === selectedCategory)
-    : heuristics;
+    ? shuffledHeuristics.filter(h => h.category === selectedCategory)
+    : shuffledHeuristics;
 
   return (
     <div className="min-h-screen">
