@@ -39,6 +39,7 @@ import goalGradientEffect from './goal-gradient-effect.js';
 import postelsLaw from './postels-law.js';
 import occamsRazor from './occams-razor.js';
 import computationalThinking from './computational-thinking.js';
+import framingBias from './framing-bias.js';
 
 // Função para embaralhar array usando algoritmo Fisher-Yates
 function shuffleArray(array) {
@@ -92,6 +93,7 @@ const allHeuristics = [
   postelsLaw,
   occamsRazor,
   computationalThinking,
+  framingBias,
 ];
 
 // Embaralha as heurísticas para não ficar tudo agrupado por categoria
