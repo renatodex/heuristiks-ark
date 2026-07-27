@@ -1,0 +1,36 @@
+export default {
+  id: 'anchoring-bias',
+  category: 'psychology',
+  icon: 'FaAnchor',
+  inventor: 'Amos Tversky & Daniel Kahneman',
+  year: '1974',
+  relatedHeuristics: ['framing-bias', 'sunk-cost-fallacy', 'barnum-effect'],
+  youtubeVideos: [
+    { title: 'Anchoring Bias videos on YouTube', url: 'https://www.youtube.com/results?search_query=anchoring+bias+kahneman' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Anchoring (Cognitive Bias)', url: 'https://en.wikipedia.org/wiki/Anchoring_(cognitive_bias)' },
+    { title: 'NNGroup - The Anchoring Principle', url: 'https://www.nngroup.com/articles/anchoring-principle/' },
+    { title: 'Original Paper - Judgment under Uncertainty (Tversky & Kahneman, 1974)', url: 'https://www.science.org/doi/10.1126/science.185.4157.1124' },
+  ],
+  en: {
+    title: 'Anchoring Bias',
+    subtitle: 'The first piece of information becomes the anchor for the entire judgment',
+    shortDescription: 'The first number or piece of information received "anchors" subsequent estimates and decisions, even when it is irrelevant.',
+    history: 'Tversky and Kahneman described anchoring in the classic 1974 paper "Judgment under Uncertainty: Heuristics and Biases". In the most famous experiment, they spun a rigged wheel of fortune (which stopped at 10 or 65) and then asked what percentage of African countries were in the UN. Those who saw "10" guessed 25% on average; those who saw "65" guessed 45% — a random, admittedly irrelevant number moved the estimates. The effect persists even when people are warned about it.',
+    purpose: 'Reveal that estimates never start from zero: they start from the available anchor and are insufficiently adjusted from there.',
+    whyRedFlag: 'On software teams, anchoring contaminates estimates all the time: if the manager asks "can this be done in two weeks?", the estimate will gravitate toward two weeks, not the real effort — which is why Planning Poker reveals the cards simultaneously. The first architecture proposal in a meeting becomes the reference that every other proposal "adjusts" from. In salary negotiation and project budgeting, whoever gives the first number defines the playing field. In UX, the price "was $200, now $99" uses an anchor to manufacture a sense of discount. Red flag: any estimate made AFTER someone mentions a number. Collect independent estimates before any discussion.',
+    eli5: 'If I ask you "does this whale weigh more or less than 1000 kg?" and then "how much does it weigh?", you\'ll guess close to 1000. If I had said 50 kg, you\'d guess really close to 50! The first number that gets into your head stays stuck there, like a ship\'s anchor.',
+    detailed: 'Anchoring Bias describes how numerical judgments and decisions are disproportionately influenced by the first available piece of information — the anchor — even when it is arbitrary or irrelevant. The mechanism is "anchoring and insufficient adjustment": we start from the anchor and adjust until it seems plausible, but the adjustment almost always stops too soon. It works with prices, deadlines, grades, salaries, and even court sentences. In software engineering: effort estimates anchored to the guess of whoever spoke first, code reviews anchored to the first solution seen (instead of the problem), performance targets anchored to the current number rather than the needed one. In product and pricing it is a deliberate tool: a high anchor price so the middle plan looks cheap, an "original price" crossed out next to the discount. Defenses: estimate before hearing other people\'s numbers (Planning Poker, blind estimates), deliberately generate multiple anchors (best case / worst case), and distrust any "adjustment" starting from a number you didn\'t choose.',
+  },
+  pt: {
+    title: 'Anchoring Bias',
+    subtitle: 'A primeira informação vira a âncora de todo o julgamento',
+    shortDescription: 'O primeiro número ou informação recebida "ancora" as estimativas e decisões seguintes, mesmo quando é irrelevante.',
+    history: 'Tversky e Kahneman descreveram a ancoragem no clássico paper de 1974 "Judgment under Uncertainty: Heuristics and Biases". No experimento mais famoso, giraram uma roleta viciada (que parava em 10 ou 65) e depois perguntaram qual a porcentagem de países africanos na ONU. Quem viu "10" chutou em média 25%; quem viu "65" chutou 45% — um número aleatório e declaradamente irrelevante moveu as estimativas. O efeito persiste mesmo quando as pessoas são avisadas sobre ele.',
+    purpose: 'Revelar que estimativas nunca partem do zero: partem da âncora disponível e são ajustadas insuficientemente a partir dela.',
+    whyRedFlag: 'Em times de software, a ancoragem contamina estimativas o tempo todo: se o gerente pergunta "isso dá pra fazer em duas semanas?", a estimativa gravitará em torno de duas semanas, não do esforço real — por isso o Planning Poker revela as cartas simultaneamente. A primeira proposta de arquitetura numa reunião vira a referência que todas as outras "ajustam". Em negociação salarial e orçamento de projeto, quem dá o primeiro número define o campo do jogo. Em UX, o preço "de R$ 200 por R$ 99" usa âncora para fabricar sensação de desconto. Red flag: qualquer estimativa feita DEPOIS de alguém mencionar um número. Colete estimativas independentes antes de qualquer discussão.',
+    eli5: 'Se eu te pergunto "essa baleia pesa mais ou menos que 1000 kg?" e depois "quanto ela pesa?", você vai chutar perto de 1000. Se eu tivesse falado 50 kg, você chutaria pertinho de 50! O primeiro número que entra na sua cabeça fica preso lá, como uma âncora de navio.',
+    detailed: 'O Anchoring Bias (Viés de Ancoragem) descreve como julgamentos numéricos e decisões são desproporcionalmente influenciados pela primeira informação disponível — a âncora — mesmo quando ela é arbitrária ou irrelevante. O mecanismo é "ancoragem e ajuste insuficiente": partimos da âncora e ajustamos até parecer plausível, mas o ajuste quase sempre para cedo demais. Funciona com preços, prazos, notas, salários e até sentenças judiciais. Em engenharia de software: estimativas de esforço ancoradas no palpite do primeiro a falar, code reviews ancorados na primeira solução vista (em vez do problema), metas de performance ancoradas no número atual e não no necessário. Em produto e pricing é ferramenta deliberada: preço ancorado alto para o plano do meio parecer barato, "valor original" riscado ao lado do desconto. Defesas: estimar antes de ouvir números alheios (Planning Poker, estimativas cegas), gerar múltiplas âncoras deliberadamente (melhor caso / pior caso), e desconfiar de qualquer "ajuste" a partir de um número que você não escolheu.',
+  },
+};

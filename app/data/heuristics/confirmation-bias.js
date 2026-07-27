@@ -1,0 +1,36 @@
+export default {
+  id: 'confirmation-bias',
+  category: 'psychology',
+  icon: 'FaFilter',
+  inventor: 'Peter Wason',
+  year: '1960',
+  relatedHeuristics: ['dunning-kruger-effect', 'sunk-cost-fallacy', 'goodharts-law'],
+  youtubeVideos: [
+    { title: 'Confirmation Bias videos on YouTube', url: 'https://www.youtube.com/results?search_query=confirmation+bias+wason' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Confirmation Bias', url: 'https://en.wikipedia.org/wiki/Confirmation_bias' },
+    { title: 'NNGroup - Confirmation Bias in UX', url: 'https://www.nngroup.com/articles/confirmation-bias-ux/' },
+    { title: 'The Decision Lab - Confirmation Bias', url: 'https://thedecisionlab.com/biases/confirmation-bias' },
+  ],
+  en: {
+    title: 'Confirmation Bias',
+    subtitle: 'We only see what confirms what we already believe',
+    shortDescription: 'The tendency to seek, interpret, and remember information that confirms our beliefs while ignoring contrary evidence.',
+    history: 'English psychologist Peter Wason coined the term and demonstrated it in 1960 with the "2-4-6" experiment: participants had to discover the rule behind the sequence by proposing new triples of numbers. The rule was simply "ascending numbers", but almost everyone formulated complex hypotheses (e.g. "ascending even numbers") and only tested sequences that CONFIRMED their hypothesis, never ones that could refute it. The idea echoes Francis Bacon (1620), who had already observed that "the human understanding, when it has once adopted an opinion, draws all things else to support it".',
+    purpose: 'Show that our natural instinct is to confirm hypotheses, not to test them — and that solid knowledge comes from trying to refute, not from accumulating agreement.',
+    whyRedFlag: 'It is probably the most expensive bias in engineering and product. In debugging: you "know" where the bug is and ignore the stack trace pointing somewhere else. In testing: we write tests that prove the code works, not tests that try to break it. In product: user research becomes compliment collecting ("questions that lead to the desired answer"), and metrics are chosen after looking at the data. In architecture: whoever has already decided on technology X only reads benchmarks favorable to X. The antidote is to institutionalize refutation: write down what would prove you wrong BEFORE looking at the data, test hostile edge cases, and hand the opposing hypothesis to someone who will genuinely defend it.',
+    eli5: 'Imagine you think ALL cats are mean. Then when a cat scratches you, you yell "SEE? I KNEW IT!". But when ten cats are sweet to you, you don\'t even notice. Your brain only keeps the things that prove what you already believed!',
+    detailed: 'Confirmation Bias operates in three stages: biased search (we look for sources that agree with us), biased interpretation (we read ambiguous evidence in our favor), and biased memory (we better remember whatever proves us right). It is amplified by emotion and by beliefs tied to identity — the more invested we are in a position, the stronger the filter. In software practice: debugging guided by hunches instead of systematic bisection, A/B tests stopped as soon as they "confirm" the hypothesis, user interviews with leading questions ("don\'t you find it easier this way?"), and technical opinion bubbles in homogeneous teams. Good anti-confirmation practices: pre-mortems, falsifiable hypotheses recorded before the experiment, devil\'s advocate reviews, and Wason\'s question: "what test would I run if I wanted to prove myself WRONG?".',
+  },
+  pt: {
+    title: 'Confirmation Bias',
+    subtitle: 'Só enxergamos o que confirma o que já acreditamos',
+    shortDescription: 'Tendência de buscar, interpretar e lembrar informações que confirmam nossas crenças, ignorando evidências contrárias.',
+    history: 'O psicólogo inglês Peter Wason cunhou o termo e o demonstrou em 1960 com o experimento "2-4-6": participantes deviam descobrir a regra por trás da sequência propondo novas triplas de números. A regra era simplesmente "números crescentes", mas quase todos formulavam hipóteses complexas (ex: "pares crescentes") e só testavam sequências que CONFIRMAVAM sua hipótese, nunca as que poderiam refutá-la. A ideia ecoa Francis Bacon (1620), que já observava que "o entendimento humano, uma vez que adota uma opinião, arrasta tudo o mais para apoiá-la".',
+    purpose: 'Mostrar que nosso instinto natural é confirmar hipóteses, não testá-las — e que conhecimento sólido vem de tentar refutar, não de acumular concordância.',
+    whyRedFlag: 'É provavelmente o viés mais caro em engenharia e produto. No debug: você "sabe" onde está o bug e ignora o stack trace que aponta para outro lugar. Em testes: escrevemos testes que provam que o código funciona, não testes que tentam quebrá-lo. Em produto: a pesquisa de usuário vira coleta de elogios ("perguntas que induzem a resposta desejada"), e métricas são escolhidas depois de ver os dados. Em arquitetura: quem já decidiu pela tecnologia X só lê benchmarks favoráveis a X. O antídoto é institucionalizar a refutação: escreva o que provaria que você está errado ANTES de olhar os dados, teste casos de borda hostis, e escale a hipótese contrária para alguém defender de verdade.',
+    eli5: 'Imagina que você acha que TODOS os gatos são bravos. Aí quando um gato te arranha você grita "VIU? EU SABIA!". Mas quando dez gatos são fofinhos com você, você nem repara. Seu cérebro só guarda as coisas que provam o que você já achava!',
+    detailed: 'O Confirmation Bias (Viés de Confirmação) opera em três estágios: busca enviesada (procuramos fontes que concordam conosco), interpretação enviesada (lemos evidências ambíguas a nosso favor) e memória enviesada (lembramos melhor do que nos dá razão). Ele é amplificado por emoção e por crenças ligadas à identidade — quanto mais investidos estamos numa posição, mais forte o filtro. Na prática de software: debugging guiado por palpite em vez de bisseção sistemática, A/B tests interrompidos assim que "confirmam" a hipótese, entrevistas de usuário com perguntas que induzem ("você não acha mais fácil assim?"), e bolhas de opinião técnica em times homogêneos. Boas práticas anti-confirmação: pre-mortems, hipóteses falseáveis registradas antes do experimento, revisões por advogado do diabo, e a pergunta de Wason: "que teste eu faria se quisesse provar que estou ERRADO?".',
+  },
+};

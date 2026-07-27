@@ -1,0 +1,36 @@
+export default {
+  id: 'halo-effect',
+  category: 'psychology',
+  icon: 'FaSun',
+  inventor: 'Edward Thorndike',
+  year: '1920',
+  relatedHeuristics: ['aesthetic-usability-effect', 'barnum-effect', 'confirmation-bias'],
+  youtubeVideos: [
+    { title: 'Halo Effect videos on YouTube', url: 'https://www.youtube.com/results?search_query=halo+effect+psychology' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Halo Effect', url: 'https://en.wikipedia.org/wiki/Halo_effect' },
+    { title: 'NNGroup - The Halo Effect', url: 'https://www.nngroup.com/articles/halo-effect/' },
+    { title: 'The Decision Lab - Halo Effect', url: 'https://thedecisionlab.com/biases/halo-effect' },
+  ],
+  en: {
+    title: 'Halo Effect',
+    subtitle: 'One shining quality outshines the assessment of everything else',
+    shortDescription: 'A positive impression of one attribute contaminates the judgment of all other attributes of a person, product, or brand.',
+    history: 'Psychologist Edward Thorndike identified the phenomenon in 1920 in the study "A Constant Error in Psychological Ratings". Analyzing how army officers rated their soldiers, he noticed that scores for independent attributes (physique, intelligence, leadership, character) were highly correlated: a soldier considered handsome and well-postured received high marks in everything, even without evidence. One trait created a "halo" that lit up all the other evaluations.',
+    purpose: 'Expose that our judgments are not independent: a strong first impression distorts every subsequent evaluation, for better (halo) and for worse (horn effect).',
+    whyRedFlag: 'The Halo Effect distorts technical decisions all the time: the charismatic senior dev\'s proposal passes without scrutiny while the same idea coming from a junior gets questioned; a famous company releases a tool and everyone assumes it\'s good ("if Google uses it, it works for us"); an articulate interview candidate is presumed to be technically strong. The reverse (horn effect) happens too: one ugly bug in the demo and the client distrusts the entire system. Evaluate attributes separately, blind evaluations whenever possible (e.g. review code without knowing the author), and ask: "would I approve this same idea if it came from someone else?".',
+    eli5: 'You know that classmate who\'s really good at soccer? Then everyone thinks he\'s also the smartest, the coolest, and the funniest kid in class. But being good at one thing doesn\'t mean being good at everything! Our brain gets confused and thinks one little star shines at everything.',
+    detailed: 'The Halo Effect is the tendency to let an overall positive impression (or a single striking attribute) influence the evaluation of unrelated characteristics. Attractive people are judged more competent; premium brands make any product "better"; beautiful interfaces seem more functional (see the Aesthetic-Usability Effect, which is a particular case of halo). In product and engineering, the effect operates in performance reviews ("he nailed project X, so he must be right now"), in adopting technology for the prestige of its origin rather than technical merit, and in job interviews. The opposite effect, the "horn effect", makes a single flaw contaminate everything. Countermeasures: rubrics with independent criteria evaluated separately, blind reviews, written technical decisions (RFCs) judged on their content, and awareness that reputation is a useful prior, but no substitute for evidence.',
+  },
+  pt: {
+    title: 'Halo Effect',
+    subtitle: 'Uma qualidade brilhante ofusca a avaliação de todo o resto',
+    shortDescription: 'A impressão positiva em um atributo contamina o julgamento de todos os outros atributos de uma pessoa, produto ou marca.',
+    history: 'O psicólogo Edward Thorndike identificou o fenômeno em 1920 no estudo "A Constant Error in Psychological Ratings". Ao analisar como oficiais do exército avaliavam seus soldados, percebeu que as notas de atributos independentes (físico, inteligência, liderança, caráter) eram altamente correlacionadas: um soldado considerado bonito e com boa postura recebia notas altas em tudo, mesmo sem evidência. Uma característica criava uma "auréola" (halo) que iluminava todas as outras avaliações.',
+    purpose: 'Expor que nossos julgamentos não são independentes: uma primeira impressão forte distorce todas as avaliações seguintes, para o bem (halo) e para o mal (efeito chifre).',
+    whyRedFlag: 'O Halo Effect distorce decisões técnicas o tempo todo: a proposta do dev sênior carismático passa sem escrutínio enquanto a mesma ideia vinda de um júnior é questionada; uma empresa famosa lança uma ferramenta e todos assumem que é boa ("se o Google usa, serve pra nós"); um candidato articulado em entrevista é presumido tecnicamente forte. O inverso (horn effect) também: um bug feio na demo e o cliente desconfia do sistema inteiro. Avalie atributos separadamente, cegue avaliações quando possível (ex: revisar código sem saber o autor) e pergunte: "eu aprovaria essa mesma ideia se viesse de outra pessoa?".',
+    eli5: 'Sabe aquele coleguinha que é muito bom no futebol? Aí todo mundo acha que ele também é o mais inteligente, o mais legal e o mais engraçado da turma. Mas ser bom numa coisa não quer dizer ser bom em tudo! Nosso cérebro se confunde e acha que uma estrelinha brilha em tudo.',
+    detailed: 'O Halo Effect é a tendência de deixar que uma impressão geral positiva (ou um único atributo marcante) influencie a avaliação de características não relacionadas. Pessoas atraentes são julgadas mais competentes; marcas premium tornam qualquer produto "melhor"; interfaces bonitas parecem mais funcionais (ver Aesthetic-Usability Effect, que é um caso particular de halo). Em produto e engenharia, o efeito opera em avaliações de desempenho ("ele mandou bem no projeto X, então deve estar certo agora"), na adoção de tecnologia por prestígio da origem em vez de mérito técnico, e em entrevistas de emprego. O efeito oposto, "horn effect", faz um único defeito contaminar tudo. Contramedidas: rubricas com critérios independentes avaliados separadamente, revisões cegas, decisões técnicas por escrito (RFCs) julgadas pelo conteúdo, e consciência de que reputação é um prior útil, mas não substitui evidência.',
+  },
+};

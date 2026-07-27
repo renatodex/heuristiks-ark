@@ -1,0 +1,36 @@
+export default {
+  id: 'barnum-effect',
+  category: 'psychology',
+  icon: 'FaHatWizard',
+  inventor: 'Bertram R. Forer',
+  year: '1948',
+  relatedHeuristics: ['confirmation-bias', 'halo-effect', 'framing-bias'],
+  youtubeVideos: [
+    { title: 'Barnum Effect videos on YouTube', url: 'https://www.youtube.com/results?search_query=barnum+effect+forer+effect' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Barnum Effect', url: 'https://en.wikipedia.org/wiki/Barnum_effect' },
+    { title: 'The Decision Lab - Barnum Effect', url: 'https://thedecisionlab.com/biases/barnum-effect' },
+    { title: 'Original Paper - The Fallacy of Personal Validation (Forer, 1949)', url: 'https://psycnet.apa.org/record/1949-04221-001' },
+  ],
+  en: {
+    title: 'Barnum Effect',
+    subtitle: 'Vague descriptions feel tailor-made for you',
+    shortDescription: 'The tendency to accept generic, vague descriptions as if they were highly accurate and personal.',
+    history: 'In 1948, psychologist Bertram Forer gave his students a "personality test" and handed each one a supposedly individual analysis. In reality, everyone received exactly the same text, assembled from vague horoscope phrases ("You have a great need for others to admire you", "At times you are extroverted, at times reserved"). The students rated the accuracy of "their" analysis at an average of 4.26 out of 5. The name "Barnum Effect" was coined by psychologist Paul Meehl in 1956, in reference to showman P.T. Barnum, famous for having "a little something for everybody".',
+    purpose: 'Warn that personal validation is not evidence: if a statement is vague enough to fit anyone, the fact that it "feels right" proves nothing.',
+    whyRedFlag: 'The Barnum Effect is the engine behind horoscopes, dubious personality tests, and "cold reading" scams. In the software world, it shows up in analytics reports and dashboards that say generic things ("your users value convenience"), in vague usability feedback that any product would receive, and in AI responses that sound personalized but would fit any context. If an insight, diagnosis, or assessment would apply equally well to any project, it isn\'t saying anything. Demand specificity and falsifiability: a good insight is one that could have been wrong.',
+    eli5: 'Imagine a magician says: "You like to play, but sometimes you get tired". You think "WOW, he knows me!". But he says the same thing to ALL the kids, because it fits everyone! It\'s not magic, it\'s just a sentence that fits anybody.',
+    detailed: 'The Barnum Effect (or Forer Effect) is the tendency to judge vague, generic descriptions as highly accurate and personal, especially when we believe they were made specifically for us. Three ingredients amplify it: (1) believing the analysis is personalized, (2) the perceived authority of the speaker, (3) a predominance of positive statements. It is the foundation of horoscopes, numerology, "cold readings", and many personality tests with no scientific validity. In tech and product, the effect appears when we accept generic conclusions from user research ("people want simplicity"), when superficial personalization creates a false sense of precision ("recommended for you"), and when AI-generated text sounds intimate but is pure template. The antidote is to ask: "would this statement fit any person/product? Could it be proven false?". If not, it\'s Barnum.',
+  },
+  pt: {
+    title: 'Barnum Effect',
+    subtitle: 'Descrições vagas parecem feitas sob medida para você',
+    shortDescription: 'Tendência de aceitar descrições genéricas e vagas como se fossem altamente precisas e pessoais.',
+    history: 'Em 1948, o psicólogo Bertram Forer aplicou um "teste de personalidade" em seus alunos e entregou a cada um uma análise supostamente individual. Na verdade, todos receberam exatamente o mesmo texto, montado com frases vagas de horóscopos ("Você tem grande necessidade de ser admirado", "Às vezes você é extrovertido, às vezes reservado"). Os alunos avaliaram a precisão da "sua" análise com nota média de 4,26 em 5. O nome "Efeito Barnum" foi cunhado pelo psicólogo Paul Meehl em 1956, em referência ao showman P.T. Barnum, famoso por ter "um pouco de algo para todo mundo".',
+    purpose: 'Alertar que validação pessoal não é evidência: se uma afirmação é vaga o suficiente para servir para qualquer pessoa, o fato de "parecer certa" não prova nada.',
+    whyRedFlag: 'O Efeito Barnum é o motor de horóscopos, testes de personalidade duvidosos e golpes de "leitura fria". No mundo do software, ele aparece em relatórios de analytics e dashboards que dizem coisas genéricas ("seus usuários valorizam praticidade"), em feedbacks de usabilidade vagos que qualquer produto receberia, e em respostas de IA que soam personalizadas mas serviriam para qualquer contexto. Se um insight, diagnóstico ou avaliação serviria igualmente para qualquer projeto, ele não está dizendo nada. Exija especificidade e falseabilidade: um bom insight é aquele que poderia estar errado.',
+    eli5: 'Imagina que um mágico diz: "Você gosta de brincar, mas às vezes fica cansado". Você pensa "UAU, ele me conhece!". Mas ele diz a mesma coisa para TODAS as crianças, porque serve para todo mundo! Não é mágica, é só uma frase que cabe em qualquer pessoa.',
+    detailed: 'O Efeito Barnum (ou Efeito Forer) é a tendência de julgar descrições vagas e genéricas como altamente precisas e pessoais, especialmente quando acreditamos que foram feitas especificamente para nós. Três ingredientes o potencializam: (1) acreditar que a análise é personalizada, (2) autoridade percebida de quem fala, (3) predominância de afirmações positivas. É a base de horóscopos, numerologia, "leituras frias" e muitos testes de personalidade sem validade científica. Em tecnologia e produto, o efeito aparece quando aceitamos conclusões genéricas de pesquisas de usuário ("as pessoas querem simplicidade"), quando personalizações superficiais criam falsa sensação de precisão ("recomendado para você"), e quando textos gerados por IA soam íntimos mas são template puro. O antídoto é perguntar: "essa afirmação serviria para qualquer pessoa/produto? Ela poderia ser provada falsa?". Se não, é Barnum.',
+  },
+};

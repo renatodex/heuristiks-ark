@@ -1,0 +1,36 @@
+export default {
+  id: 'dunning-kruger-effect',
+  category: 'psychology',
+  icon: 'FaMountain',
+  inventor: 'David Dunning & Justin Kruger',
+  year: '1999',
+  relatedHeuristics: ['confirmation-bias', 'overengineering', 'bike-shedding'],
+  youtubeVideos: [
+    { title: 'TED-Ed: Why incompetent people think they\'re amazing (David Dunning)', url: 'https://www.youtube.com/watch?v=pOLmD_WVY-E' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Dunning-Kruger Effect', url: 'https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect' },
+    { title: 'Original Paper - Unskilled and Unaware of It (Kruger & Dunning, 1999)', url: 'https://psycnet.apa.org/record/1999-15054-002' },
+    { title: 'The Decision Lab - Dunning-Kruger Effect', url: 'https://thedecisionlab.com/biases/dunning-kruger-effect' },
+  ],
+  en: {
+    title: 'Dunning-Kruger Effect',
+    subtitle: 'Those who know little think they know a lot',
+    shortDescription: 'People with low skill at something tend to overestimate their competence, while experts tend to underestimate theirs.',
+    history: 'Psychologists David Dunning and Justin Kruger, of Cornell University, published the study "Unskilled and Unaware of It" in 1999. Inspired by the case of a robber who covered his face in lemon juice believing it would make him invisible to cameras, they tested participants on logic, grammar, and humor. The result: the worst performers were precisely the ones who most overestimated their scores. The explanation is cruel: the very skill needed to do something well is the skill needed to realize you do it poorly.',
+    purpose: 'Remember that confidence is not a sign of competence: incompetence usually comes bundled with the inability to perceive it.',
+    whyRedFlag: 'On software teams, Dunning-Kruger shows up when someone with little experience declares "this is easy, I\'ll do it in two days", when a junior dev rewrites a system they don\'t understand because "the old code is bad", or when confident estimates come precisely from those who know the domain least. The reverse is also dangerous: experts who assume "everyone knows this" and document poorly. Be suspicious of confidence out of proportion to track record, and create processes (code review, pairing, spikes) that replace self-assessment with evidence.',
+    eli5: 'You know when you learn to ride a bike with training wheels and think you can already ride a motorcycle? You know so little that you can\'t even see how much there is left to learn. Someone who actually rides a motorcycle knows it\'s hard and is careful!',
+    detailed: 'The Dunning-Kruger Effect is a cognitive bias in which people with low skill in an area overestimate their competence, while highly competent people tend to underestimate their own performance (partly because they assume others find it easy too). The popular chart of the effect shows the "Peak of Mount Stupid" (sky-high confidence with little knowledge), followed by the "Valley of Despair" (the crash upon discovering one\'s own ignorance) and the slow climb toward mastery. In software development this is everywhere: frameworks look simple until the first real project; security, concurrency, and distributed systems seem trivial to those who have never been bitten by them. Practical antidotes: seek constant external feedback, measure instead of opining, cultivate epistemic humility ("what don\'t I know that I don\'t know?"), and treat the overconfidence phase as a predictable stage of learning — yours and everyone else\'s.',
+  },
+  pt: {
+    title: 'Dunning-Kruger Effect',
+    subtitle: 'Quem sabe pouco acha que sabe muito',
+    shortDescription: 'Pessoas com pouca habilidade em algo tendem a superestimar sua competência, enquanto especialistas tendem a subestimá-la.',
+    history: 'Os psicólogos David Dunning e Justin Kruger, da Universidade Cornell, publicaram em 1999 o estudo "Unskilled and Unaware of It". Inspirados pelo caso de um assaltante que cobriu o rosto com suco de limão acreditando ficar invisível para câmeras, eles testaram participantes em lógica, gramática e humor. Resultado: os piores desempenhos eram justamente os que mais superestimavam suas notas. A explicação é cruel: a mesma habilidade necessária para fazer algo bem é a habilidade necessária para perceber que você faz mal.',
+    purpose: 'Lembrar que confiança não é sinal de competência: a incompetência costuma vir acompanhada da incapacidade de percebê-la.',
+    whyRedFlag: 'Em equipes de software, o Dunning-Kruger aparece quando alguém com pouca experiência declara que "isso é fácil, faço em dois dias", quando um dev júnior reescreve um sistema que não entende porque "o código antigo é ruim", ou quando estimativas confiantes vêm justamente de quem menos conhece o domínio. O inverso também é perigoso: especialistas que assumem que "todo mundo sabe disso" e documentam mal. Desconfie de confiança desproporcional ao histórico, e crie processos (code review, pareamento, spikes) que substituam autoavaliação por evidência.',
+    eli5: 'Sabe quando você aprende a andar de bicicleta com rodinhas e acha que já pode andar de moto? Você sabe tão pouquinho que nem consegue ver o tanto que falta aprender. Quem já anda de moto de verdade sabe que é difícil e toma cuidado!',
+    detailed: 'O Efeito Dunning-Kruger é um viés cognitivo em que pessoas com baixa habilidade em uma área superestimam sua competência, enquanto pessoas altamente competentes tendem a subestimar a própria performance (em parte porque assumem que os outros também acham fácil). O gráfico popular do efeito mostra o "Pico da Burrice" (confiança altíssima com pouco conhecimento), seguido do "Vale do Desespero" (a queda ao descobrir a própria ignorância) e da subida lenta rumo à maestria. Em desenvolvimento de software isso é onipresente: frameworks parecem simples até o primeiro projeto real; segurança, concorrência e sistemas distribuídos parecem triviais para quem nunca foi mordido por eles. Antídotos práticos: buscar feedback externo constante, medir em vez de opinar, cultivar humildade epistêmica ("o que eu não sei que não sei?") e tratar a fase de excesso de confiança como etapa previsível do aprendizado — sua e dos outros.',
+  },
+};

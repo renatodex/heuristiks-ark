@@ -1,7 +1,11 @@
 import { Link } from "react-router";
 import * as Icons from "react-icons/fa";
+import { useLanguage } from "../contexts/LanguageContext";
+import { ui } from "../lib/i18n";
 
 export default function HeuristicCard({ heuristic, categoryColor, categoryName, categoryEmoji }) {
+  const { lang } = useLanguage();
+  const t = ui[lang];
   const IconComponent = Icons[heuristic.icon] || Icons.FaBrain;
 
   return (
@@ -62,7 +66,7 @@ export default function HeuristicCard({ heuristic, categoryColor, categoryName, 
 
       {/* Hover indicator */}
       <div className="mt-4 flex items-center gap-2 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-        <span style={{ color: categoryColor }}>Ler mais</span>
+        <span style={{ color: categoryColor }}>{t.readMore}</span>
         <Icons.FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" style={{ color: categoryColor }} />
       </div>
     </Link>

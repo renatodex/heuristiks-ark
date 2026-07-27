@@ -4,53 +4,43 @@ import { heuristics, categories } from "../data/heuristics";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import * as Icons from "react-icons/fa";
+import { useLanguage } from "../contexts/LanguageContext";
+import { ui, localizeHeuristic, localizeCategory } from "../lib/i18n";
 
 export function meta({ params }) {
   const heuristic = heuristics.find(h => h.id === params.id);
   if (!heuristic) {
-    return [{ title: "Heurística não encontrada" }];
+    return [{ title: "Heuristic not found" }];
   }
+  const en = heuristic.en || heuristic;
   return [
-    { title: `${heuristic.title} - Arca das Heurísticas` },
-    { name: "description", content: heuristic.subtitle },
+    { title: `${en.title} - Heuristics Ark` },
+    { name: "description", content: en.subtitle },
   ];
 }
 
 export default function Heuristic({ params }) {
   const { id } = params;
   const navigate = useNavigate();
-  const heuristic = heuristics.find(h => h.id === id);
-
-  if (!heuristic) {
-    return (
-      <div className="min-h-screen">
-        <Header />
-        <main className="container mx-auto px-4 py-12 text-center">
-          <h2 className="text-4xl font-bold text-[#ec4899] mb-4">
-            Heurística não encontrada
-          </h2>
-          <Link to="/" className="text-[#06b6d4] hover:underline">
-            Voltar para a home
-          </Link>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  const category = categories.find(c => c.id === heuristic.category);
-  const IconComponent = Icons[heuristic.icon] || Icons.FaBrain;
-  const relatedHeuristicsData = heuristic.relatedHeuristics
-    .map(id => heuristics.find(h => h.id === id))
-    .filter(Boolean);
+  const { lang } = useLanguage();
+  const t = ui[lang];
+  const rawHeuristic = heuristics.find(h => h.id === id);
 
   // Navegação entre heurísticas
   const currentIndex = heuristics.findIndex(h => h.id === id);
-  const previousHeuristic = heuristics[currentIndex - 1] || heuristics[heuristics.length - 1];
-  const nextHeuristic = heuristics[currentIndex + 1] || heuristics[0];
+  const previousHeuristic = localizeHeuristic(
+    heuristics[currentIndex - 1] || heuristics[heuristics.length - 1],
+    lang
+  );
+  const nextHeuristic = localizeHeuristic(
+    heuristics[currentIndex + 1] || heuristics[0],
+    lang
+  );
 
   // Navegação por teclado (setas)
   useEffect(() => {
+    if (!rawHeuristic) return;
+
     const handleKeyPress = (e) => {
       if (e.key === 'ArrowLeft') {
         navigate(`/heuristica/${previousHeuristic.id}`);
@@ -61,10 +51,37 @@ export default function Heuristic({ params }) {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [navigate, previousHeuristic.id, nextHeuristic.id]);
+  }, [navigate, rawHeuristic, previousHeuristic.id, nextHeuristic.id]);
+
+  if (!rawHeuristic) {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <main className="container mx-auto px-4 py-12 text-center">
+          <h2 className="text-4xl font-bold text-[#ec4899] mb-4">
+            {t.notFound}
+          </h2>
+          <Link to="/" className="text-[#06b6d4] hover:underline">
+            {t.backHome}
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const heuristic = localizeHeuristic(rawHeuristic, lang);
+  const category = localizeCategory(
+    categories.find(c => c.id === rawHeuristic.category),
+    lang
+  );
+  const relatedHeuristicsData = rawHeuristic.relatedHeuristics
+    .map(relatedId => heuristics.find(h => h.id === relatedId))
+    .filter(Boolean)
+    .map(related => localizeHeuristic(related, lang));
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareText = `Conheça ${heuristic.title}: ${heuristic.subtitle}`;
+  const shareText = `${t.shareIntro} ${heuristic.title}: ${heuristic.subtitle}`;
 
   const handleShare = (platform) => {
     const encodedUrl = encodeURIComponent(shareUrl);
@@ -87,9 +104,11 @@ export default function Heuristic({ params }) {
   const copyToClipboard = () => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(shareUrl);
-      alert('Link copiado para a área de transferência!');
+      alert(t.linkCopied);
     }
   };
+
+  const IconComponent = Icons[heuristic.icon] || Icons.FaBrain;
 
   return (
     <div className="min-h-screen">
@@ -104,8 +123,8 @@ export default function Heuristic({ params }) {
             className="inline-flex items-center gap-2 text-[#06b6d4] hover:text-[#8b5cf6] transition-colors"
           >
             <Icons.FaArrowLeft />
-            <span className="hidden sm:inline">Voltar para a Arca</span>
-            <span className="sm:hidden">Voltar</span>
+            <span className="hidden sm:inline">{t.backToArk}</span>
+            <span className="sm:hidden">{t.back}</span>
           </Link>
 
           {/* Navigation Arrows */}
@@ -114,10 +133,10 @@ export default function Heuristic({ params }) {
               <Link
                 to={`/heuristica/${previousHeuristic.id}`}
                 className="group retro-button px-4 py-2 hover:bg-[#8b5cf6]/20 transition-all"
-                title={`Anterior: ${previousHeuristic.title}`}
+                title={`${t.previous}: ${previousHeuristic.title}`}
               >
                 <Icons.FaChevronLeft className="inline text-lg group-hover:scale-110 transition-transform" />
-                <span className="hidden md:inline ml-2">Anterior</span>
+                <span className="hidden md:inline ml-2">{t.previous}</span>
               </Link>
               <span className="text-gray-500 text-sm">
                 {currentIndex + 1} / {heuristics.length}
@@ -125,15 +144,15 @@ export default function Heuristic({ params }) {
               <Link
                 to={`/heuristica/${nextHeuristic.id}`}
                 className="group retro-button px-4 py-2 hover:bg-[#8b5cf6]/20 transition-all"
-                title={`Próxima: ${nextHeuristic.title}`}
+                title={`${t.next}: ${nextHeuristic.title}`}
               >
-                <span className="hidden md:inline mr-2">Próxima</span>
+                <span className="hidden md:inline mr-2">{t.next}</span>
                 <Icons.FaChevronRight className="inline text-lg group-hover:scale-110 transition-transform" />
               </Link>
             </div>
             <span className="hidden md:block text-xs text-gray-600">
               <Icons.FaKeyboard className="inline mr-1" />
-              Use ← → para navegar
+              {t.keyboardHint}
             </span>
           </div>
         </div>
@@ -153,7 +172,7 @@ export default function Heuristic({ params }) {
                 className="inline-block px-3 py-1 mb-4 text-xs retro-border"
                 style={{ color: category?.color || '#8b5cf6' }}
               >
-                {category?.emoji} {category?.name || 'Categoria'}
+                {category?.emoji} {category?.name || 'Category'}
               </div>
 
               <h1
@@ -187,9 +206,9 @@ export default function Heuristic({ params }) {
                 <div className="text-5xl">👶</div>
                 <div>
                   <h2 className="text-3xl font-bold text-white retro-glow">
-                    Explicando como se você tivesse 5 anos
+                    {t.eli5Title}
                   </h2>
-                  <p className="text-white/80 text-sm mt-1">Agora sim! 🎉</p>
+                  <p className="text-white/80 text-sm mt-1">{t.eli5Sub}</p>
                 </div>
               </div>
               <p className="text-xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
@@ -207,9 +226,9 @@ export default function Heuristic({ params }) {
                   <div className="text-3xl">🚩</div>
                   <div>
                     <h2 className="text-2xl font-bold text-red-300">
-                      Por que isso é uma Red Flag?
+                      {t.redFlagTitle}
                     </h2>
-                    <p className="text-red-200/70 text-sm mt-1">Atenção ao problema! ⚡</p>
+                    <p className="text-red-200/70 text-sm mt-1">{t.redFlagSub}</p>
                   </div>
                 </div>
                 <p className="text-lg text-gray-200 leading-relaxed font-normal bg-black/10 p-6 rounded-lg border border-red-600/20">
@@ -222,7 +241,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaBullseye className="text-2xl text-[#ec4899]" />
-                <h2 className="text-2xl font-bold text-[#ec4899]">Para que serve</h2>
+                <h2 className="text-2xl font-bold text-[#ec4899]">{t.purposeTitle}</h2>
               </div>
               <p className="text-lg text-gray-300 leading-relaxed">
                 {heuristic.purpose}
@@ -233,7 +252,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaGraduationCap className="text-2xl text-[#06b6d4]" />
-                <h2 className="text-2xl font-bold text-[#06b6d4]">Explicação Detalhada</h2>
+                <h2 className="text-2xl font-bold text-[#06b6d4]">{t.detailedTitle}</h2>
               </div>
               <p className="text-gray-300 leading-relaxed">
                 {heuristic.detailed}
@@ -247,7 +266,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaHistory className="text-2xl text-[#fbbf24]" />
-                <h2 className="text-xl font-bold text-[#fbbf24]">História</h2>
+                <h2 className="text-xl font-bold text-[#fbbf24]">{t.historyTitle}</h2>
               </div>
               <p className="text-gray-300 leading-relaxed text-sm">
                 {heuristic.history}
@@ -258,13 +277,13 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaUser className="text-2xl text-[#10b981]" />
-                <h2 className="text-xl font-bold text-[#10b981]">Quem Inventou</h2>
+                <h2 className="text-xl font-bold text-[#10b981]">{t.inventorTitle}</h2>
               </div>
               <p className="text-gray-300">
                 <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
               </p>
               <p className="text-gray-500 mt-2">
-                Ano: {heuristic.year}
+                {t.yearLabel}: {heuristic.year}
               </p>
             </div>
 
@@ -272,7 +291,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaShareAlt className="text-2xl text-[#8b5cf6]" />
-                <h2 className="text-xl font-bold text-[#8b5cf6]">Compartilhar</h2>
+                <h2 className="text-xl font-bold text-[#8b5cf6]">{t.shareTitle}</h2>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <button
@@ -316,7 +335,7 @@ export default function Heuristic({ params }) {
                 onClick={copyToClipboard}
                 className="w-full mt-2 px-3 py-2 text-sm retro-border hover:bg-[#8b5cf6]/20 transition-colors rounded"
               >
-                <Icons.FaCopy className="inline mr-1" /> Copiar Link
+                <Icons.FaCopy className="inline mr-1" /> {t.copyLink}
               </button>
             </div>
 
@@ -326,7 +345,7 @@ export default function Heuristic({ params }) {
                 <div className="flex items-center gap-3 mb-4">
                   <Icons.FaNetworkWired className="text-2xl text-[#8b5cf6]" />
                   <h2 className="text-xl font-bold text-[#8b5cf6]">
-                    Relacionadas
+                    {t.related}
                   </h2>
                 </div>
                 <div className="space-y-3">
@@ -367,9 +386,9 @@ export default function Heuristic({ params }) {
               <div className="text-5xl">👶</div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white retro-glow">
-                  Explicando como se você tivesse 5 anos
+                  {t.eli5Title}
                 </h2>
-                <p className="text-white/80 text-sm mt-1">Agora sim! 🎉</p>
+                <p className="text-white/80 text-sm mt-1">{t.eli5Sub}</p>
               </div>
             </div>
             <p className="text-xl md:text-2xl text-white leading-relaxed font-normal bg-black/20 p-6 rounded-lg border-2 border-white/30">
@@ -387,9 +406,9 @@ export default function Heuristic({ params }) {
                 <div className="text-3xl">🚩</div>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-red-300">
-                    Por que isso é uma Red Flag?
+                    {t.redFlagTitle}
                   </h2>
-                  <p className="text-red-200/70 text-sm mt-1">Atenção ao problema! ⚡</p>
+                  <p className="text-red-200/70 text-sm mt-1">{t.redFlagSub}</p>
                 </div>
               </div>
               <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-normal bg-black/10 p-6 rounded-lg border border-red-600/20">
@@ -402,7 +421,7 @@ export default function Heuristic({ params }) {
           <div className="retro-card">
             <div className="flex items-center gap-4 flex-wrap">
               <Icons.FaShareAlt className="text-2xl text-[#8b5cf6]" />
-              <span className="font-bold">Compartilhar:</span>
+              <span className="font-bold">{t.shareTitle}:</span>
               <div className="flex gap-2 flex-wrap">
                 <button
                   onClick={() => handleShare('twitter')}
@@ -444,7 +463,7 @@ export default function Heuristic({ params }) {
                   onClick={copyToClipboard}
                   className="px-4 py-2 retro-border hover:bg-[#8b5cf6]/20 transition-colors"
                 >
-                  <Icons.FaCopy className="inline mr-1" /> Copiar Link
+                  <Icons.FaCopy className="inline mr-1" /> {t.copyLink}
                 </button>
               </div>
             </div>
@@ -456,7 +475,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaHistory className="text-2xl text-[#fbbf24]" />
-                <h2 className="text-2xl font-bold text-[#fbbf24]">História</h2>
+                <h2 className="text-2xl font-bold text-[#fbbf24]">{t.historyTitle}</h2>
               </div>
               <p className="text-gray-300 leading-relaxed">
                 {heuristic.history}
@@ -467,13 +486,13 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaUser className="text-2xl text-[#10b981]" />
-                <h2 className="text-2xl font-bold text-[#10b981]">Quem Inventou</h2>
+                <h2 className="text-2xl font-bold text-[#10b981]">{t.inventorTitle}</h2>
               </div>
               <p className="text-gray-300">
                 <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
               </p>
               <p className="text-gray-500 mt-2">
-                Ano: {heuristic.year}
+                {t.yearLabel}: {heuristic.year}
               </p>
             </div>
           </div>
@@ -482,7 +501,7 @@ export default function Heuristic({ params }) {
           <div className="retro-card">
             <div className="flex items-center gap-3 mb-4">
               <Icons.FaBullseye className="text-2xl text-[#ec4899]" />
-              <h2 className="text-2xl font-bold text-[#ec4899]">Para que serve</h2>
+              <h2 className="text-2xl font-bold text-[#ec4899]">{t.purposeTitle}</h2>
             </div>
             <p className="text-lg text-gray-300 leading-relaxed">
               {heuristic.purpose}
@@ -493,7 +512,7 @@ export default function Heuristic({ params }) {
           <div className="retro-card">
             <div className="flex items-center gap-3 mb-4">
               <Icons.FaGraduationCap className="text-2xl text-[#06b6d4]" />
-              <h2 className="text-2xl font-bold text-[#06b6d4]">Explicação Detalhada</h2>
+              <h2 className="text-2xl font-bold text-[#06b6d4]">{t.detailedTitle}</h2>
             </div>
             <p className="text-gray-300 leading-relaxed">
               {heuristic.detailed}
@@ -506,7 +525,7 @@ export default function Heuristic({ params }) {
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaNetworkWired className="text-2xl text-[#8b5cf6]" />
                 <h2 className="text-2xl font-bold text-[#8b5cf6]">
-                  Heurísticas Relacionadas
+                  {t.relatedHeuristics}
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -541,7 +560,7 @@ export default function Heuristic({ params }) {
             <div className="flex items-center gap-3 mb-4">
               <Icons.FaYoutube className="text-2xl text-red-500" />
               <h2 className="text-2xl font-bold text-red-500">
-                Vídeos no YouTube
+                {t.youtubeVideos}
               </h2>
             </div>
             <div className="space-y-3">
@@ -554,7 +573,7 @@ export default function Heuristic({ params }) {
                   className="block p-4 border-2 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 transition-all"
                 >
                   <Icons.FaYoutube className="inline text-red-500 mr-2" />
-                  <span className="text-red-500">{video.title || 'Assistir no YouTube'} →</span>
+                  <span className="text-red-500">{video.title || t.watchOnYoutube} →</span>
                 </a>
               ))}
             </div>
@@ -567,11 +586,11 @@ export default function Heuristic({ params }) {
             <div className="flex items-center gap-3 mb-4">
               <Icons.FaBookOpen className="text-2xl text-[#10b981]" />
               <h2 className="text-2xl font-bold text-[#10b981]">
-                Fontes e Referências
+                {t.sourcesTitle}
               </h2>
             </div>
             <p className="text-gray-400 mb-4 text-sm">
-              Quer se aprofundar? Confira essas fontes oficiais:
+              {t.sourcesHint}
             </p>
             <div className="space-y-3">
               {heuristic.sources.map((source, index) => (
