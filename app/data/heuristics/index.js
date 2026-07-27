@@ -40,6 +40,12 @@ import postelsLaw from './postels-law.js';
 import occamsRazor from './occams-razor.js';
 import computationalThinking from './computational-thinking.js';
 import framingBias from './framing-bias.js';
+import barnumEffect from './barnum-effect.js';
+import dunningKrugerEffect from './dunning-kruger-effect.js';
+import haloEffect from './halo-effect.js';
+import confirmationBias from './confirmation-bias.js';
+import sunkCostFallacy from './sunk-cost-fallacy.js';
+import anchoringBias from './anchoring-bias.js';
 
 // Função para embaralhar array usando algoritmo Fisher-Yates
 function shuffleArray(array) {
@@ -94,6 +100,12 @@ const allHeuristics = [
   occamsRazor,
   computationalThinking,
   framingBias,
+  barnumEffect,
+  dunningKrugerEffect,
+  haloEffect,
+  confirmationBias,
+  sunkCostFallacy,
+  anchoringBias,
 ];
 
 // Embaralha as heurísticas para não ficar tudo agrupado por categoria

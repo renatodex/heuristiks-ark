@@ -1,4 +1,10 @@
+import { useLanguage } from "../contexts/LanguageContext";
+import { ui } from "../lib/i18n";
+
 export default function Footer() {
+  const { lang } = useLanguage();
+  const t = ui[lang];
+
   return (
     <footer className="border-t border-[#8b5cf6]/10 bg-gradient-to-b from-transparent to-[#0a0a0f] mt-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -7,27 +13,27 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-lg font-bold gradient-text mb-2">
-              Arca das Heurísticas
+              {t.footerBrand}
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Conceitos poderosos de programação e áreas técnicas, úteis para todas as pessoas e profissões.
+              {t.footerDescription}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
-              Links
+              {t.footerLinks}
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="/" className="text-gray-400 hover:text-[#8b5cf6] transition-colors">
-                  Home
+                  {t.footerHome}
                 </a>
               </li>
               <li>
                 <a href="/sobre" className="text-gray-400 hover:text-[#8b5cf6] transition-colors">
-                  Sobre
+                  {t.navAbout}
                 </a>
               </li>
               <li>
@@ -46,7 +52,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
-              Criado por
+              {t.footerCreatedBy}
             </h4>
             <p className="text-sm text-gray-400 leading-relaxed">
               <a
@@ -66,7 +72,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-[#8b5cf6]/5">
           <p className="text-center text-xs text-gray-500">
-            © 2025 Arca das Heurísticas. Criado com 💜 por{" "}
+            {t.footerCopyright}{" "}
             <a
               href="https://r-labs.dev"
               target="_blank"

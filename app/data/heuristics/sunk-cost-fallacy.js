@@ -1,0 +1,36 @@
+export default {
+  id: 'sunk-cost-fallacy',
+  category: 'psychology',
+  icon: 'FaMoneyBillWave',
+  inventor: 'Richard Thaler',
+  year: '1980',
+  relatedHeuristics: ['confirmation-bias', 'parkinsons-law', 'overengineering'],
+  youtubeVideos: [
+    { title: 'Sunk Cost Fallacy videos on YouTube', url: 'https://www.youtube.com/results?search_query=sunk+cost+fallacy' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Sunk Cost', url: 'https://en.wikipedia.org/wiki/Sunk_cost' },
+    { title: 'NNGroup - The Sunk Cost Fallacy in UX', url: 'https://www.nngroup.com/articles/sunk-cost-fallacy/' },
+    { title: 'The Decision Lab - Sunk Cost Fallacy', url: 'https://thedecisionlab.com/biases/the-sunk-cost-fallacy' },
+  ],
+  en: {
+    title: 'Sunk Cost Fallacy',
+    subtitle: 'Continuing to invest in the wrong thing just because you\'ve already invested a lot',
+    shortDescription: 'The tendency to persist with something that is no longer worth it just to avoid "losing" the time, money, or effort already spent.',
+    history: 'Economist Richard Thaler (2017 Nobel laureate in Economics) formalized the fallacy in 1980 in the paper "Toward a Positive Theory of Consumer Choice", showing that people violate economic logic by factoring unrecoverable costs into their decisions. In 1985, Hal Arkes and Catherine Blumer demonstrated the effect in the famous theater ticket experiment: those who paid more attended more shows, even without enjoying them. The classic example is the Concorde airplane, which kept receiving billions from the British and French governments even when the loss was already certain — hence the nickname "Concorde Fallacy".',
+    purpose: 'Teach that rational decisions look only at future costs and benefits: what has already been spent is gone, no matter what you do now.',
+    whyRedFlag: 'In software, the Sunk Cost Fallacy keeps zombie projects alive: "we\'ve already invested 8 months in this system, we can\'t abandon it now" — but the 8 months are already gone; the only valid question is whether the NEXT months are worth more here or in another approach. It shows up in refactorings that should have been rewrites (and vice versa), in features nobody uses but that "took too much work to remove", in internal frameworks defended by the team that built them, and in tool contracts kept "because migrating would cost what we\'ve already paid". Verbal red flag: any justification starting with "but we\'ve already spent...". Decisions must be born from future value, never from past cost.',
+    eli5: 'Imagine you\'re at the movies watching a really boring film. You\'ve already watched half of it and you\'re sleepy. Staying until the end doesn\'t give back the time you already spent — it just spends MORE time on something boring! If the toy broke, crying longer won\'t fix it.',
+    detailed: 'The Sunk Cost Fallacy is the tendency to continue an endeavor because of resources already invested (time, money, effort, reputation), when the rational decision would consider only future costs and benefits. It is fueled by loss aversion (abandoning "realizes" the loss), by waste aversion, and by the desire not to admit a mistake — especially in public. It scales dangerously in organizations: the bigger the investment, the greater the pressure to continue ("escalation of commitment"). Practical antidotes: define abandonment criteria BEFORE starting (kill criteria), review projects as if you had arrived today ("if none of this existed, would we start it now?"), separate whoever decides to continue from whoever started the project, and celebrate smart cancellations as victories, not failures.',
+  },
+  pt: {
+    title: 'Sunk Cost Fallacy',
+    subtitle: 'Continuar investindo no errado só porque já investiu muito',
+    shortDescription: 'Tendência de insistir em algo que não vale mais a pena apenas para não "perder" o tempo, dinheiro ou esforço já gastos.',
+    history: 'O economista Richard Thaler (Nobel de Economia em 2017) formalizou a falácia em 1980 no paper "Toward a Positive Theory of Consumer Choice", mostrando que pessoas violam a lógica econômica ao considerar custos irrecuperáveis nas decisões. Em 1985, Hal Arkes e Catherine Blumer demonstraram o efeito no famoso experimento dos ingressos de teatro: quem pagou mais caro ia a mais espetáculos, mesmo sem gostar. O exemplo clássico é o avião Concorde, que continuou recebendo bilhões dos governos britânico e francês mesmo quando já era certo o prejuízo — por isso o apelido "Falácia do Concorde".',
+    purpose: 'Ensinar que decisões racionais olham apenas para custos e benefícios futuros: o que já foi gasto não volta, independente do que você fizer agora.',
+    whyRedFlag: 'Em software, a Sunk Cost Fallacy mantém projetos mortos-vivos: "já investimos 8 meses nesse sistema, não podemos abandonar agora" — mas os 8 meses já se foram; a única pergunta válida é se os PRÓXIMOS meses valem mais aqui ou em outra abordagem. Ela aparece em refactorings que deveriam ser reescrita (e vice-versa), em features que ninguém usa mas "deram trabalho demais para remover", em frameworks internos defendidos pela equipe que os criou, e em contratos de ferramentas mantidos "porque a migração custaria o que já pagamos". Red flag verbal: qualquer justificativa que comece com "mas já gastamos...". Decisões devem nascer do valor futuro, nunca do custo passado.',
+    eli5: 'Imagina que você está num filme muito chato no cinema. Você já viu metade e está com sono. Ficar até o final não devolve o tempo que você já gastou — só gasta MAIS tempo com uma coisa chata! Se o brinquedo quebrou, chorar mais tempo não conserta ele.',
+    detailed: 'A Sunk Cost Fallacy (Falácia do Custo Irrecuperável) é a tendência de continuar um empreendimento por causa de recursos já investidos (tempo, dinheiro, esforço, reputação), quando a decisão racional consideraria apenas custos e benefícios futuros. Ela é alimentada por aversão à perda (abandonar "realiza" a perda), por aversão ao desperdício e pelo desejo de não admitir erro — especialmente em público. Escala perigosamente em organizações: quanto maior o investimento, maior a pressão para continuar ("escalation of commitment"). Antídotos práticos: definir critérios de abandono ANTES de começar (kill criteria), revisar projetos como se você estivesse chegando hoje ("se não existisse nada, começaríamos isso agora?"), separar quem decide continuar de quem iniciou o projeto, e celebrar cancelamentos inteligentes como vitória, não como fracasso.',
+  },
+};

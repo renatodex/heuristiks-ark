@@ -8,11 +8,12 @@ import {
 } from "react-router";
 import { Analytics } from "@vercel/analytics/react"
 
+import { LanguageProvider } from "./contexts/LanguageContext";
 import "./styles.css";
 
 export function Layout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,7 +34,11 @@ export function Layout({ children }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <LanguageProvider>
+      <Outlet />
+    </LanguageProvider>
+  );
 }
 
 export function ErrorBoundary({ error }) {
