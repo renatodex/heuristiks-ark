@@ -110,6 +110,57 @@ export default function Heuristic({ params }) {
 
   const IconComponent = Icons[heuristic.icon] || Icons.FaBrain;
 
+  // Entradas do tipo "story" trazem a narrativa que originou o termo + a lição
+  const isStory = rawHeuristic.type === 'story';
+  const inventorLabel = isStory ? t.protagonistTitle : t.inventorTitle;
+  const storyParagraphs = heuristic.story
+    ? (Array.isArray(heuristic.story) ? heuristic.story : [heuristic.story])
+    : null;
+
+  const storySection = storyParagraphs && (
+    <div className="relative p-8 bg-gradient-to-br from-[#84cc16]/20 to-[#fbbf24]/10 rounded-lg border-2 border-[#84cc16]/40 shadow-[0_0_30px_rgba(132,204,22,0.25)] transform hover:scale-102 transition-all">
+      <div className="absolute top-4 right-4 text-6xl opacity-10">
+        📜
+      </div>
+      <div className="flex items-center gap-4 mb-6">
+        <div className="text-5xl">📜</div>
+        <div>
+          <h2 className="text-3xl font-bold text-[#84cc16] retro-glow">
+            {t.storyTitle}
+          </h2>
+          <p className="text-[#84cc16]/70 text-sm mt-1">{t.storySub}</p>
+        </div>
+      </div>
+      <div className="space-y-4 bg-black/20 p-6 rounded-lg border border-[#84cc16]/30">
+        {storyParagraphs.map((paragraph, index) => (
+          <p key={index} className="text-lg text-gray-200 leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+
+  const lessonSection = heuristic.lesson && (
+    <div className="relative p-8 bg-gradient-to-br from-[#10b981]/30 to-[#06b6d4]/20 rounded-lg border border-[#10b981]/40 shadow-lg transform hover:scale-102 transition-all">
+      <div className="absolute top-4 right-4 text-5xl opacity-10">
+        💡
+      </div>
+      <div className="flex items-center gap-4 mb-6">
+        <div className="text-4xl">💡</div>
+        <div>
+          <h2 className="text-2xl font-bold text-[#10b981]">
+            {t.lessonTitle}
+          </h2>
+          <p className="text-[#10b981]/70 text-sm mt-1">{t.lessonSub}</p>
+        </div>
+      </div>
+      <p className="text-xl text-gray-100 leading-relaxed font-medium bg-black/20 p-6 rounded-lg border border-[#10b981]/30">
+        {heuristic.lesson}
+      </p>
+    </div>
+  );
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -197,6 +248,10 @@ export default function Heuristic({ params }) {
         <div className="hidden lg:grid lg:grid-cols-12 lg:gap-6 mb-12">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-8 space-y-6">
+            {/* A HISTÓRIA + LIÇÃO - só para entradas do tipo story */}
+            {storySection}
+            {lessonSection}
+
             {/* ELI5 - DESTAQUE */}
             <div className="relative p-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg shadow-[0_0_30px_rgba(236,72,153,0.6)] transform hover:scale-102 transition-all">
               <div className="absolute top-4 right-4 text-6xl opacity-20">
@@ -277,7 +332,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaUser className="text-2xl text-[#10b981]" />
-                <h2 className="text-xl font-bold text-[#10b981]">{t.inventorTitle}</h2>
+                <h2 className="text-xl font-bold text-[#10b981]">{inventorLabel}</h2>
               </div>
               <p className="text-gray-300">
                 <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
@@ -377,6 +432,10 @@ export default function Heuristic({ params }) {
 
         {/* Mobile Layout - Original */}
         <div className="lg:hidden space-y-6">
+          {/* A HISTÓRIA + LIÇÃO - só para entradas do tipo story */}
+          {storySection}
+          {lessonSection}
+
           {/* ELI5 - DESTAQUE */}
           <div className="relative p-8 bg-gradient-to-br from-[#ec4899] to-[#8b5cf6] rounded-lg shadow-[0_0_30px_rgba(236,72,153,0.6)] transform hover:scale-102 transition-all">
             <div className="absolute top-4 right-4 text-6xl opacity-20">
@@ -486,7 +545,7 @@ export default function Heuristic({ params }) {
             <div className="retro-card">
               <div className="flex items-center gap-3 mb-4">
                 <Icons.FaUser className="text-2xl text-[#10b981]" />
-                <h2 className="text-2xl font-bold text-[#10b981]">{t.inventorTitle}</h2>
+                <h2 className="text-2xl font-bold text-[#10b981]">{inventorLabel}</h2>
               </div>
               <p className="text-gray-300">
                 <span className="font-bold text-[#10b981]">{heuristic.inventor}</span>
