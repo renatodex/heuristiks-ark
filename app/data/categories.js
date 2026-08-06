@@ -6,6 +6,7 @@ export const categories = [
   { id: 'team', name: { en: 'Teamwork', pt: 'Trabalho em Equipe' }, color: '#10b981', emoji: '👥' },
   { id: 'ux', name: { en: 'UX & Interface', pt: 'UX & Interface' }, color: '#f97316', emoji: '✨' },
   { id: 'psychology', name: { en: 'Psychology', pt: 'Psicologia' }, color: '#ef4444', emoji: '🎭' },
+  { id: 'stories', name: { en: 'Stories & Lessons', pt: 'Histórias & Lições' }, color: '#84cc16', emoji: '📜' },
 ];
 
 export default categories;
