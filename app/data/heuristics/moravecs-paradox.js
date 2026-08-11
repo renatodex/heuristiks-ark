@@ -1,0 +1,36 @@
+export default {
+  id: 'moravecs-paradox',
+  category: 'complexity',
+  icon: 'FaRobot',
+  inventor: 'Hans Moravec',
+  year: '1988',
+  relatedHeuristics: ['computational-thinking', 'cognitive-complexity', 'dunning-kruger-effect'],
+  youtubeVideos: [
+    { title: 'Moravec\'s Paradox - Why are machines so smart, yet so dumb?', url: 'https://www.youtube.com/watch?v=hcfVRkC3Dp0' },
+  ],
+  sources: [
+    { title: 'Wikipedia - Moravec\'s Paradox', url: 'https://en.wikipedia.org/wiki/Moravec%27s_paradox' },
+    { title: 'Mind Children - The Future of Robot and Human Intelligence (Hans Moravec, 1988)', url: 'https://www.hup.harvard.edu/books/9780674576186' },
+    { title: 'Fact-checking Moravec\'s Paradox (Arvind Narayanan)', url: 'https://www.normaltech.ai/p/fact-checking-moravecs-paradox' },
+  ],
+  en: {
+    title: 'Moravec\'s Paradox',
+    subtitle: 'What is hard for humans is easy for computers — and vice versa',
+    shortDescription: 'It is comparatively easy to make computers show adult-level performance on intelligence tests, and difficult or impossible to give them the skills of a one-year-old in perception and mobility.',
+    history: 'In the 1980s, roboticist Hans Moravec — along with AI researchers like Rodney Brooks and Marvin Minsky — noticed something counterintuitive: the "hard" intellectual feats (logic, algebra, chess) were the easiest to program, while the "easy" things any toddler does (recognizing a face, walking, grabbing a toy) resisted decades of research. Moravec formalized the observation in his 1988 book "Mind Children". His explanation is evolutionary: sensorimotor skills were refined over billions of years and feel effortless precisely because they are massively optimized, while abstract reasoning is a recent evolutionary veneer — thousands of years old at best — so it only feels hard.',
+    purpose: 'Remind us that perceived difficulty says nothing about computational difficulty. Human intuition is a terrible estimator of how hard a task is to automate.',
+    whyRedFlag: 'This paradox is a red flag for effort estimation in the AI era. Teams reason "if AI can pass the bar exam, automating this simple task will be trivial" — and the project sinks in the part everyone assumed was easy: perception, edge cases, physical interaction, common sense. It explains why we got AI that writes code and passes exams before robots that fold laundry. When planning AI features or automation, distrust any estimate based on how easy the task feels for a human: the demo that impresses (the "hard" part) is often cheap, and the boring last mile (the "easy" part) is where budgets die.',
+    eli5: 'A computer can beat the world champion at chess, but a robot can\'t tie its own shoelaces! Things you learned as a baby — walking, seeing, picking up toys — are super hard for robots. And things grown-ups think are hard, like doing big math, are super easy for computers!',
+    detailed: 'Moravec\'s Paradox states that high-level reasoning requires relatively little computation, while low-level sensorimotor skills require enormous computational resources. Chess fell to computers in 1997; walking on two legs across a cluttered room is still a research frontier. The practical lesson for software: task difficulty must be measured by the nature of the computation, not by human intuition. Skills that feel effortless (understanding a sarcastic sentence, noticing that a photo "looks wrong", handling a slightly unusual customer request) hide immense complexity, while skills that feel impressive (calculations, formal logic, generating fluent text) can be surprisingly cheap. In product terms: the flashy 80% of an AI demo may take a weekend, while the "trivial" remaining 20% — robustness, perception, real-world messiness — takes years. Estimate accordingly.',
+  },
+  pt: {
+    title: 'Moravec\'s Paradox',
+    subtitle: 'O que é difícil para humanos é fácil para computadores — e vice-versa',
+    shortDescription: 'É comparativamente fácil fazer computadores terem desempenho adulto em testes de inteligência, e difícil ou impossível dar a eles as habilidades de um bebê de um ano em percepção e mobilidade.',
+    history: 'Nos anos 1980, o roboticista Hans Moravec — junto com pesquisadores de IA como Rodney Brooks e Marvin Minsky — percebeu algo contraintuitivo: as proezas intelectuais "difíceis" (lógica, álgebra, xadrez) eram as mais fáceis de programar, enquanto as coisas "fáceis" que qualquer criança faz (reconhecer um rosto, andar, pegar um brinquedo) resistiam a décadas de pesquisa. Moravec formalizou a observação no livro "Mind Children" (1988). Sua explicação é evolutiva: habilidades sensório-motoras foram refinadas por bilhões de anos e parecem fáceis justamente porque são massivamente otimizadas, enquanto o raciocínio abstrato é um verniz evolutivo recente — alguns milhares de anos, no máximo — e por isso apenas parece difícil.',
+    purpose: 'Lembrar que dificuldade percebida não diz nada sobre dificuldade computacional. A intuição humana é uma péssima estimadora de quão difícil é automatizar uma tarefa.',
+    whyRedFlag: 'Esse paradoxo é um red flag para estimativas de esforço na era da IA. Times raciocinam "se a IA passa na prova da OAB, automatizar essa tarefa simples vai ser trivial" — e o projeto afunda justamente na parte que todos assumiram ser fácil: percepção, edge cases, interação física, senso comum. Ele explica por que temos IA que escreve código e passa em provas antes de robôs que dobram roupa. Ao planejar features de IA ou automação, desconfie de qualquer estimativa baseada em quão fácil a tarefa parece para um humano: a demo que impressiona (a parte "difícil") costuma ser barata, e a última milha entediante (a parte "fácil") é onde os orçamentos morrem.',
+    eli5: 'Um computador consegue vencer o campeão mundial de xadrez, mas um robô não consegue amarrar o próprio cadarço! As coisas que você aprendeu quando era bebê — andar, enxergar, pegar brinquedos — são super difíceis para robôs. E as coisas que os adultos acham difíceis, como fazer contas enormes, são super fáceis para computadores!',
+    detailed: 'O Moravec\'s Paradox (Paradoxo de Moravec) afirma que o raciocínio de alto nível exige relativamente pouca computação, enquanto habilidades sensório-motoras de baixo nível exigem recursos computacionais enormes. O xadrez caiu para os computadores em 1997; andar sobre duas pernas em uma sala bagunçada ainda é fronteira de pesquisa. A lição prática para software: a dificuldade de uma tarefa deve ser medida pela natureza da computação, não pela intuição humana. Habilidades que parecem fáceis (entender uma frase sarcástica, notar que uma foto "está estranha", lidar com um pedido de cliente levemente fora do padrão) escondem complexidade imensa, enquanto habilidades que parecem impressionantes (cálculos, lógica formal, gerar texto fluente) podem ser surpreendentemente baratas. Em termos de produto: os 80% vistosos de uma demo de IA podem levar um fim de semana, enquanto os 20% "triviais" restantes — robustez, percepção, a bagunça do mundo real — levam anos. Estime de acordo.',
+  },
+};
