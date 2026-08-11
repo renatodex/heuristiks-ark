@@ -46,6 +46,7 @@ import haloEffect from './halo-effect.js';
 import confirmationBias from './confirmation-bias.js';
 import sunkCostFallacy from './sunk-cost-fallacy.js';
 import anchoringBias from './anchoring-bias.js';
+import moravecsParadox from './moravecs-paradox.js';
 
 // Função para embaralhar array usando algoritmo Fisher-Yates
 function shuffleArray(array) {
@@ -106,6 +107,7 @@ const allHeuristics = [
   confirmationBias,
   sunkCostFallacy,
   anchoringBias,
+  moravecsParadox,
 ];
 
 // Embaralha as heurísticas para não ficar tudo agrupado por categoria
